@@ -1,0 +1,6 @@
+[program:zen_worker]
+command = /usr/bin/python /opt/zen/src/service.py
+autostart = True
+autorestart = True
+startretries=1000
+environment=PYTHONPATH="/opt/zen/zen-common/"

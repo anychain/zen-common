@@ -20,53 +20,8 @@ try:
 except ImportError:
     syslog = None
 
-from debtcollector import removals
-
-
-try:
-    NullHandler = logging.NullHandler
-except AttributeError:  # NOTE(jkoelker) NullHandler added in Python 2.7
-    class NullHandler(logging.Handler):
-        def handle(self, record):
-            pass
-
-        def emit(self, record):
-            pass
-
-        def createLock(self):
-            self.lock = None
-
-
 def _get_binary_name():
     return os.path.basename(inspect.stack()[-1][1])
-
-
-class RFCSysLogHandler(logging.handlers.SysLogHandler):
-    """SysLogHandler following the RFC
-
-    .. deprecated:: 1.2.0
-       Use :class:`OSSysLogHandler` instead
-    """
-
-    @removals.remove(
-        message='use oslo_log.handlers.OSSysLogHandler()',
-        version='1.2.0',
-        removal_version='?',
-    )
-    def __init__(self, *args, **kwargs):
-        self.binary_name = _get_binary_name()
-        # Do not use super() unless type(logging.handlers.SysLogHandler)
-        #  is 'type' (Python 2.7).
-        # Use old style calls, if the type is 'classobj' (Python 2.6)
-        logging.handlers.SysLogHandler.__init__(self, *args, **kwargs)
-
-    def format(self, record):
-        # Do not use super() unless type(logging.handlers.SysLogHandler)
-        #  is 'type' (Python 2.7).
-        # Use old style calls, if the type is 'classobj' (Python 2.6)
-        msg = logging.handlers.SysLogHandler.format(self, record)
-        msg = self.binary_name + ' ' + msg
-        return msg
 
 _AUDIT = logging.INFO + 1
 

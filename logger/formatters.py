@@ -20,8 +20,8 @@ import traceback
 import six
 from six import moves
 
-from oslo_context import context as context_utils
-from oslo_serialization import jsonutils
+#from oslo_context import context as context_utils
+#from oslo_serialization import jsonutils
 
 
 def _dictify_context(context):
@@ -31,16 +31,9 @@ def _dictify_context(context):
         context = context.to_dict()
     return context
 
-
-# A configuration object is given to us when the application registers
-# the logging options.
-_CONF = None
-
-
 def _store_global_conf(conf):
     global _CONF
     _CONF = conf
-
 
 def _update_record_with_context(record):
     """Given a log record, update it with context information.

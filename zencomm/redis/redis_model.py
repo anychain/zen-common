@@ -1,4 +1,4 @@
-from common.redis import redis_client
+from zencomm.redis import redis_client
 
 class RedisModel():
     '''

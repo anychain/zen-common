@@ -16,7 +16,7 @@ import alembic
 from alembic import config as alembic_config
 import alembic.migration as alembic_migration
 
-from common.db.sqlalchemy.migration_cli import ext_base
+from zencomm.db.sqlalchemy.migration_cli import ext_base
 
 
 class AlembicExtension(ext_base.MigrationExtensionBase):

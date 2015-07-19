@@ -11,11 +11,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from common.config import cfg
-from common.config import fixture as config
+from zencomm.config import cfg
+from zencomm.config import fixture as config
 
-from common.db import options
-from common.db.tests import utils as test_utils
+from zencomm.db import options
+from zencomm.db.tests import utils as test_utils
 
 
 class DbApiOptionsTestCase(test_utils.BaseTestCase):

@@ -2,7 +2,7 @@ import copy
 import logging
 import threading
 
-from common.db import api
+from zencomm.db import api
 
 
 LOG = logging.getLogger(__name__)

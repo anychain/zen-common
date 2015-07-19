@@ -7,7 +7,7 @@ Recommended ways to use sessions within this framework:
 
   .. code-block:: python
 
-    from common.db.sqlalchemy import enginefacade
+    from zencomm.db.sqlalchemy import enginefacade
 
     @enginefacade.reader
     def get_foo(context, foo):
@@ -166,9 +166,9 @@ Efficient use of soft deletes:
 
 """
 
-from common.db.sqlalchemy import enginefacade
-from common.db.sqlalchemy import engines
-from common.db.sqlalchemy import orm
+from zencomm.db.sqlalchemy import enginefacade
+from zencomm.db.sqlalchemy import engines
+from zencomm.db.sqlalchemy import orm
 
 EngineFacade = enginefacade.LegacyEngineFacade
 create_engine = engines.create_engine

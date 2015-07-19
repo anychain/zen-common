@@ -4,7 +4,7 @@
 
 import json
 
-from common.api import constants as CONST
+from zencomm.api import constants as CONST
 
 
 class APIReq():

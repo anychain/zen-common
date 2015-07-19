@@ -15,7 +15,7 @@
 
 import contextlib
 
-from common.config import cfg
+from zencomm.config import cfg
 from oslotest import base as test_base
 from oslotest import moxstubout
 import six

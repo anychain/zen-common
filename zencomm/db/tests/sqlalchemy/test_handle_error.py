@@ -26,9 +26,9 @@ from sqlalchemy.sql import select
 from sqlalchemy.types import Integer
 from sqlalchemy.types import TypeDecorator
 
-from common.db.sqlalchemy.compat import handle_error
-from common.db.sqlalchemy.compat import utils
-from common.db.tests import utils as test_utils
+from zencomm.db.sqlalchemy.compat import handle_error
+from zencomm.db.sqlalchemy.compat import utils
+from zencomm.db.tests import utils as test_utils
 
 
 class MyException(Exception):

@@ -17,8 +17,8 @@ import re
 
 from sqlalchemy import exc as sqla_exc
 
-from common.db import exception
-from common.db.sqlalchemy import compat
+from zencomm.db import exception
+from zencomm.db.sqlalchemy import compat
 
 
 LOG = logging.getLogger(__name__)

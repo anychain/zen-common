@@ -24,7 +24,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy import event
 from sqlalchemy import exc as sqla_exc
 
-from common.db.sqlalchemy.compat import utils
+from zencomm.db.sqlalchemy.compat import utils
 
 
 def handle_error(engine, listener):

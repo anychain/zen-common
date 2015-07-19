@@ -13,8 +13,8 @@
 import logging
 import os
 
-from common.db.sqlalchemy import migration
-from common.db.sqlalchemy.migration_cli import ext_base
+from zencomm.db.sqlalchemy import migration
+from zencomm.db.sqlalchemy.migration_cli import ext_base
 
 
 LOG = logging.getLogger(__name__)

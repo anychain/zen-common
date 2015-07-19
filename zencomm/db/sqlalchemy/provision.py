@@ -29,11 +29,11 @@ from sqlalchemy.engine import url as sa_url
 from sqlalchemy import schema
 import testresources
 
-from common.db._i18n import _LI
-from common.db import exception
-from common.db.sqlalchemy.compat import utils as compat_utils
-from common.db.sqlalchemy import session
-from common.db.sqlalchemy import utils
+from zencomm.db._i18n import _LI
+from zencomm.db import exception
+from zencomm.db.sqlalchemy.compat import utils as compat_utils
+from zencomm.db.sqlalchemy import session
+from zencomm.db.sqlalchemy import utils
 
 LOG = logging.getLogger(__name__)
 

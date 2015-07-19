@@ -15,9 +15,9 @@ from sqlalchemy import inspect
 from sqlalchemy import schema
 from sqlalchemy import types
 
-from common.db import exception
-from common.db.sqlalchemy import provision
-from common.db.sqlalchemy import test_base
+from zencomm.db import exception
+from zencomm.db.sqlalchemy import provision
+from zencomm.db.sqlalchemy import test_base
 
 
 class DropAllObjectsTest(test_base.DbTestCase):

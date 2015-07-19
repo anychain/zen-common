@@ -29,10 +29,10 @@ from sqlalchemy import exc
 from sqlalchemy import pool
 from sqlalchemy.sql.expression import select
 
-from common.db import exception
+from zencomm.db import exception
 
-from common.db.sqlalchemy import exc_filters
-from common.db.sqlalchemy import utils
+from zencomm.db.sqlalchemy import exc_filters
+from zencomm.db.sqlalchemy import utils
 
 LOG = logging.getLogger(__name__)
 

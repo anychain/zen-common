@@ -14,9 +14,9 @@ import mock
 from oslotest import base as test_base
 import sqlalchemy
 
-from common.db.sqlalchemy.migration_cli import ext_alembic
-from common.db.sqlalchemy.migration_cli import ext_migrate
-from common.db.sqlalchemy.migration_cli import manager
+from zencomm.db.sqlalchemy.migration_cli import ext_alembic
+from zencomm.db.sqlalchemy.migration_cli import ext_migrate
+from zencomm.db.sqlalchemy.migration_cli import manager
 
 
 class MockWithCmp(mock.MagicMock):

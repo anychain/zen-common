@@ -21,9 +21,9 @@ import six
 import sqlalchemy as sa
 import sqlalchemy.ext.declarative as sa_decl
 
-from common.db import exception as exc
-from common.db.sqlalchemy import test_base
-from common.db.sqlalchemy import test_migrations as migrate
+from zencomm.db import exception as exc
+from zencomm.db.sqlalchemy import test_base
+from zencomm.db.sqlalchemy import test_migrations as migrate
 
 
 class TestWalkVersions(test.BaseTestCase, migrate.WalkVersionsMixin):

@@ -30,9 +30,9 @@ import sqlalchemy.exc
 import sqlalchemy.sql.expression as expr
 import sqlalchemy.types as types
 
-from common.db._i18n import _LE
-from common.db import exception as exc
-from common.db.sqlalchemy import utils
+from zencomm.db._i18n import _LE
+from zencomm.db import exception as exc
+from zencomm.db.sqlalchemy import utils
 
 LOG = logging.getLogger(__name__)
 

@@ -17,7 +17,7 @@ from sqlalchemy import orm
 from sqlalchemy import sql
 from sqlalchemy import types as sqltypes
 
-from common.db.sqlalchemy import utils
+from zencomm.db.sqlalchemy import utils
 
 
 def update_on_match(

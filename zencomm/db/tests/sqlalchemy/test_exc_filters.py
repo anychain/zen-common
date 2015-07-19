@@ -22,11 +22,11 @@ import sqlalchemy as sqla
 from sqlalchemy import event
 from sqlalchemy.orm import mapper
 
-from common.db import exception
-from common.db.sqlalchemy import engines
-from common.db.sqlalchemy import exc_filters
-from common.db.sqlalchemy import test_base
-from common.db.tests import utils as test_utils
+from zencomm.db import exception
+from zencomm.db.sqlalchemy import engines
+from zencomm.db.sqlalchemy import exc_filters
+from zencomm.db.sqlalchemy import test_base
+from zencomm.db.tests import utils as test_utils
 
 _TABLE_NAME = '__tmp__test__tmp__'
 

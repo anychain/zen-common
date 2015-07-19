@@ -17,8 +17,8 @@ from sqlalchemy import schema
 from sqlalchemy import sql
 from sqlalchemy import types as sqltypes
 
-from common.db.sqlalchemy import test_base
-from common.db.sqlalchemy import update_match
+from zencomm.db.sqlalchemy import test_base
+from zencomm.db.sqlalchemy import update_match
 
 Base = declarative.declarative_base()
 

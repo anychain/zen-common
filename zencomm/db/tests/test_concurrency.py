@@ -17,8 +17,8 @@ import sys
 
 import mock
 
-from common.db import concurrency
-from common.db.tests import utils as test_utils
+from zencomm.db import concurrency
+from zencomm.db.tests import utils as test_utils
 
 FAKE_BACKEND_MAPPING = {'sqlalchemy': 'fake.db.sqlalchemy.api'}
 

@@ -26,13 +26,13 @@ except ImportError:
 
 import os
 
-from common.utils import reflection
+from zencomm.utils import reflection
 import six
 
-from common.db import exception
-from common.db.sqlalchemy import enginefacade
-from common.db.sqlalchemy import provision
-from common.db.sqlalchemy import session
+from zencomm.db import exception
+from zencomm.db.sqlalchemy import enginefacade
+from zencomm.db.sqlalchemy import provision
+from zencomm.db.sqlalchemy import session
 
 
 class DbFixture(fixtures.Fixture):
@@ -234,7 +234,7 @@ def optimize_db_test_loader(file_):
     Place this in an __init__.py package file within the root of the test
     suite, at the level where testresources loads it as a package::
 
-        from common.db.sqlalchemy import test_base
+        from zencomm.db.sqlalchemy import test_base
 
         load_tests = test_base.optimize_db_test_loader(__file__)
 

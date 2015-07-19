@@ -22,10 +22,10 @@ from migrate.versioning import api as versioning_api
 import mock
 import sqlalchemy
 
-from common.db import exception as db_exception
-from common.db.sqlalchemy import migration
-from common.db.sqlalchemy import test_base
-from common.db.tests import utils as test_utils
+from zencomm.db import exception as db_exception
+from zencomm.db.sqlalchemy import migration
+from zencomm.db.sqlalchemy import test_base
+from zencomm.db.tests import utils as test_utils
 
 
 class TestMigrationCommon(test_base.DbTestCase):

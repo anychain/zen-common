@@ -34,14 +34,14 @@ from sqlalchemy.orm import Session
 from sqlalchemy.sql import select
 from sqlalchemy.types import UserDefinedType, NullType
 
-from common.db import exception
-from common.db.sqlalchemy.compat import utils as compat_utils
-from common.db.sqlalchemy import models
-from common.db.sqlalchemy import provision
-from common.db.sqlalchemy import session
-from common.db.sqlalchemy import test_base as db_test_base
-from common.db.sqlalchemy import utils
-from common.db.tests import utils as test_utils
+from zencomm.db import exception
+from zencomm.db.sqlalchemy.compat import utils as compat_utils
+from zencomm.db.sqlalchemy import models
+from zencomm.db.sqlalchemy import provision
+from zencomm.db.sqlalchemy import session
+from zencomm.db.sqlalchemy import test_base as db_test_base
+from zencomm.db.sqlalchemy import utils
+from zencomm.db.tests import utils as test_utils
 
 
 Base = declarative_base()

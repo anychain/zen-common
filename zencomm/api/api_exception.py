@@ -1,5 +1,5 @@
 import sys
-import common.api.error_code as ErrCode
+import zencomm.api.error_code as ErrCode
 
 class APIException(Exception):
     """Base zen-api Exception

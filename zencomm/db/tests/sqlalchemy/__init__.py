@@ -13,6 +13,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from common.db.sqlalchemy import test_base
+from zencomm.db.sqlalchemy import test_base
 
 load_tests = test_base.optimize_db_test_loader(__file__)

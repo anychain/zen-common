@@ -46,7 +46,7 @@ from migrate.versioning import api as versioning_api
 from migrate.versioning.repository import Repository
 import sqlalchemy
 
-from common.db import exception
+from zencomm.db import exception
 
 
 def db_sync(engine, abs_path, version=None, init_version=0, sanity_check=True):

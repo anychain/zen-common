@@ -21,7 +21,7 @@ import logging
 
 import fixtures
 import mock
-from common.config import cfg
+from zencomm.config import cfg
 from oslotest import base as oslo_test
 import sqlalchemy
 from sqlalchemy import Column, MetaData, Table
@@ -29,12 +29,12 @@ from sqlalchemy.engine import url
 from sqlalchemy import Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-from common.db import exception
-from common.db import options as db_options
-from common.db.sqlalchemy import engines
-from common.db.sqlalchemy import models
-from common.db.sqlalchemy import session
-from common.db.sqlalchemy import test_base
+from zencomm.db import exception
+from zencomm.db import options as db_options
+from zencomm.db.sqlalchemy import engines
+from zencomm.db.sqlalchemy import models
+from zencomm.db.sqlalchemy import session
+from zencomm.db.sqlalchemy import test_base
 
 
 BASE = declarative_base()

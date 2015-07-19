@@ -4,10 +4,10 @@ import operator
 import threading
 import warnings
 
-from common.conf import cfg
-from common.db import exception
-from common.db.sqlalchemy import engines
-from common.db.sqlalchemy import orm
+from zencomm.conf import cfg
+from zencomm.db import exception
+from zencomm.db.sqlalchemy import engines
+from zencomm.db.sqlalchemy import orm
 
 
 class _symbol(object):

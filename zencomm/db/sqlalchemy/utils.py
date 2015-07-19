@@ -3,7 +3,7 @@ import contextlib
 import logging
 import re
 
-from common.utils import timeutils
+from zencomm.utils import timeutils
 import six
 import sqlalchemy
 from sqlalchemy import Boolean
@@ -23,8 +23,8 @@ from sqlalchemy import String
 from sqlalchemy import Table
 from sqlalchemy.types import NullType
 
-from common.db import exception
-from common.db.sqlalchemy import models
+from zencomm.db import exception
+from zencomm.db.sqlalchemy import models
 
 # NOTE(ochuprykov): Add references for backwards compatibility
 InvalidSortKey = exception.InvalidSortKey
@@ -221,7 +221,7 @@ def model_query(model, session, args=None, **kwargs):
 
     .. code-block:: python
 
-      from common.db.sqlalchemy import utils
+      from zencomm.db.sqlalchemy import utils
 
 
       def get_instance_by_uuid(uuid):
@@ -244,7 +244,7 @@ def model_query(model, session, args=None, **kwargs):
 
     .. code-block:: python
 
-      from common.db.sqlalchemy import utils
+      from zencomm.db.sqlalchemy import utils
 
 
       def _model_query(context, model, session=None, args=None,
@@ -318,7 +318,7 @@ def get_table(engine, name):
 class InsertFromSelect(object):
     """Form the base for `INSERT INTO table (SELECT ... )` statement.
 
-    DEPRECATED: this class is deprecated and will be removed from common.db
+    DEPRECATED: this class is deprecated and will be removed from zencomm.db
     in a few releases. Use default SQLAlchemy insert from select implementation
     instead
 
@@ -643,7 +643,7 @@ def get_connect_string(backend, database, user=None, passwd=None,
     Try to get a connection with a very specific set of values, if we get
     these then we'll run the tests, otherwise they are skipped
 
-    DEPRECATED: this function is deprecated and will be removed from common.db
+    DEPRECATED: this function is deprecated and will be removed from zencomm.db
     in a few releases. Please use the provisioning system for dealing
     with URLs and database provisioning.
 
@@ -664,12 +664,12 @@ def is_backend_avail(backend, database, user=None, passwd=None):
     """Return True if the given backend is available.
 
 
-    DEPRECATED: this function is deprecated and will be removed from common.db
+    DEPRECATED: this function is deprecated and will be removed from zencomm.db
     in a few releases. Please use the provisioning system to access
     databases based on backend availability.
 
     """
-    from common.db.sqlalchemy import provision
+    from zencomm.db.sqlalchemy import provision
 
     connect_uri = get_connect_string(backend=backend,
                                      database=database,

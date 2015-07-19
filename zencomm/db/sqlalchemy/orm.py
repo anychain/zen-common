@@ -16,11 +16,11 @@
 """SQLAlchemy ORM connectivity and query structures.
 """
 
-from common.utils import timeutils
+from zencomm.utils import timeutils
 import sqlalchemy.orm
 from sqlalchemy.sql.expression import literal_column
 
-from common.db.sqlalchemy import update_match
+from zencomm.db.sqlalchemy import update_match
 
 
 class Query(sqlalchemy.orm.query.Query):

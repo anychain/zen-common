@@ -4,7 +4,7 @@ SQLAlchemy models.
 
 import six
 
-from common.utils import timeutils
+from zencomm.utils import timeutils
 from sqlalchemy import Column, Integer
 from sqlalchemy import DateTime
 from sqlalchemy.orm import object_mapper

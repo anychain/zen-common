@@ -16,12 +16,12 @@
 """Unit tests for DB API."""
 
 import mock
-from common.config import cfg
-from common.utils import importutils
+from zencomm.config import cfg
+from zencomm.utils import importutils
 
-from common.db import api
-from common.db import exception
-from common.db.tests import utils as test_utils
+from zencomm.db import api
+from zencomm.db import exception
+from zencomm.db.tests import utils as test_utils
 
 sqla = importutils.try_import('sqlalchemy')
 if not sqla:

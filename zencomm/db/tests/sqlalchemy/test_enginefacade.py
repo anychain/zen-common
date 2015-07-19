@@ -16,7 +16,7 @@ import copy
 import warnings
 
 import mock
-from common.config import cfg
+from zencomm.config import cfg
 from oslo_context import context as oslo_context
 from oslotest import base as oslo_test_base
 from sqlalchemy import Column
@@ -27,12 +27,12 @@ from sqlalchemy import select
 from sqlalchemy import String
 from sqlalchemy import Table
 
-from common.db import exception
-from common.db import options
-from common.db.sqlalchemy import enginefacade
-from common.db.sqlalchemy import engines as oslo_engines
-from common.db.sqlalchemy import orm
-from common.db.sqlalchemy import test_base
+from zencomm.db import exception
+from zencomm.db import options
+from zencomm.db.sqlalchemy import enginefacade
+from zencomm.db.sqlalchemy import engines as oslo_engines
+from zencomm.db.sqlalchemy import orm
+from zencomm.db.sqlalchemy import test_base
 
 
 enginefacade.transaction_context_provider(oslo_context.RequestContext)

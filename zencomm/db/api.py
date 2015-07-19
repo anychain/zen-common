@@ -12,11 +12,11 @@ import logging
 import threading
 import time
 
-from common.utils import excutils
-from common.utils import importutils
+from zencomm.utils import excutils
+from zencomm.utils import importutils
 import six
 
-from common.db import exception
+from zencomm.db import exception
 
 
 LOG = logging.getLogger(__name__)

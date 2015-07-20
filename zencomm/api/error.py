@@ -16,9 +16,19 @@ error_map = {
 }
 
 
-def get_errmsg(error_code):
+class Error():
     '''
-        get error message according to error code
+        error code and error message
     '''
-    return error_map[error_code]
+    def __init__(self, errcode, errmsg = None):
+        '''
+        '''
+        self.errcode = errcode
+        if errmsg is None:
+            return error_map[errcode]
     
+    def get_errcode(self):
+        return self.errcode
+
+    def get_errmsg(self):
+        return self.errmsg

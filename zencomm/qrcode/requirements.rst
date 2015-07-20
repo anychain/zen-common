@@ -1,0 +1,6 @@
+pyqrcode
+qrtools
+PyPNG
+
+
+or:

@@ -162,6 +162,72 @@ class FamilyDetailReq(APIReq):
     action = CONST.ACTION_FAMILY_DETAIL
 
 
+# 6) branch request
+class BranchListReq(APIReq):
+    resource = CONST.RESOURCE_BRANCH
+    action = CONST.ACTION_BRANCH_LIST
+
+class BranchCreateReq(APIReq):
+    resource = CONST.RESOURCE_BRANCH
+    action = CONST.ACTION_BRANCH_CREATE
+    required_params = ['name', 'type', 'address', 'address_code']
+
+class BranchUpdateReq(APIReq):
+    resource = CONST.RESOURCE_BRANCH
+    action = CONST.ACTION_BRANCH_UPDATE
+
+class BranchDeleteReq(APIReq):
+    resource = CONST.RESOURCE_BRANCH
+    action = CONST.ACTION_BRANCH_DELETE
+
+class BranchDetailReq(APIReq):
+    resource = CONST.RESOURCE_BRANCH
+    action = CONST.ACTION_BRANCH_DETAIL
+
+# 7) organization request
+class OrganizationListReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_LIST
+
+class OrganizationCreateReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_CREATE
+    required_params = ['name', 'type', 'address', 'address_code']
+
+class OrganizationUpdateReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_UPDATE
+
+class OrganizationDeleteReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_DELETE
+
+class OrganizationDetailReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_DETAIL
+
+# 8) state request
+class StateListReq(APIReq):
+    resource = CONST.RESOURCE_STATE
+    action = CONST.ACTION_STATE_LIST
+
+class StateCreateReq(APIReq):
+    resource = CONST.RESOURCE_STATE
+    action = CONST.ACTION_STATE_CREATE
+    required_params = ['name', 'description']
+
+class StateUpdateReq(APIReq):
+    resource = CONST.RESOURCE_STATE
+    action = CONST.ACTION_STATE_UPDATE
+
+class StateDeleteReq(APIReq):
+    resource = CONST.RESOURCE_STATE
+    action = CONST.ACTION_STATE_DELETE
+
+class StateDetailReq(APIReq):
+    resource = CONST.RESOURCE_STATE
+    action = CONST.ACTION_STATE_DETAIL
+
 
 #if __name__ == '__main__':
 #    user_create_req = UserCreateReq({'name': 'zen-dev', 'age': '30', 'phone': '1366688888', 'email': 'dev@esse.io'})

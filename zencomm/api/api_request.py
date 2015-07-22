@@ -99,7 +99,7 @@ class SessionRenewReq(APIReq):
 class ActivityCreateReq(APIReq):
     resource = CONST.RESOURCE_ACTIVITY
     action = CONST.ACTION_ACTIVITY_CREATE
-    required_params = ['name', 'topic', 'address']
+    required_params = ['name', 'organization_id', 'topic', 'address', 'number', 'volunteer_number', 'person', 'phone', 'email', 'address_code', 'target_people', 'serve_age', 'longitude', 'latitude', 'state_id']
 
 class ActivityUpdateReq(APIReq):
     resource = CONST.RESOURCE_ACTIVITY
@@ -170,7 +170,7 @@ class BranchListReq(APIReq):
 class BranchCreateReq(APIReq):
     resource = CONST.RESOURCE_BRANCH
     action = CONST.ACTION_BRANCH_CREATE
-    required_params = ['name', 'type', 'address', 'address_code']
+    required_params = ['name', 'type', 'address', 'address_code', 'register_time', 'found_time', 'state_id']
 
 class BranchUpdateReq(APIReq):
     resource = CONST.RESOURCE_BRANCH
@@ -192,7 +192,7 @@ class OrganizationListReq(APIReq):
 class OrganizationCreateReq(APIReq):
     resource = CONST.RESOURCE_ORGANIZATION
     action = CONST.ACTION_ORGANIZATION_CREATE
-    required_params = ['name', 'type', 'address', 'address_code']
+    required_params = ['name', 'type', 'address', 'address_code', 'register_time', 'found_time', 'state_id']
 
 class OrganizationUpdateReq(APIReq):
     resource = CONST.RESOURCE_ORGANIZATION

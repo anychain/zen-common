@@ -24,7 +24,9 @@ def reply_error_to_client(request, retcode, retbody, status=status.HTTP_400_BAD_
         api reply error message to client
     '''
     reply = build_reply(retcode, retbody)
-    return Response(reply, status)
+    response = Response(reply, status)
+    response['Access-Control-Allow-Origin'] = '*'
+    return response
 
 def reply_success_to_client(request, reply):
     '''
@@ -32,7 +34,9 @@ def reply_success_to_client(request, reply):
         @param data: request recevied from ws in json format
     '''
     status = HTTP_STATUS[request.method]
-    return Response(reply, status)
+    response = Response(reply, status)
+    response['Access-Control-Allow-Origin'] = '*'
+    return response
 
 def check_reply_to_client(request, reply):
     '''

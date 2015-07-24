@@ -2,14 +2,14 @@ from rest_framework.response import Response
 from rest_framework import status
 import json
 
-HTTP_STATUS = {
+HTTP_SUCCESS_STATUS = {
     'POST': status.HTTP_201_CREATED,
     'GET': status.HTTP_200_OK,
     'PUT': status.HTTP_204_NO_CONTENT,
     'DELETE': status.HTTP_204_NO_CONTENT
 }
 
-def build_reply(retcode=0, retbody={}):
+def build_reply(retbody={}, retcode=0):
     '''
         build json reply according to retcode and data
     '''
@@ -17,34 +17,37 @@ def build_reply(retcode=0, retbody={}):
         'retcode': retcode,
         'retbody': retbody
     }
+
     return json.dumps(reply)
 
-def reply_error_to_client(request, retcode, retbody, status=status.HTTP_400_BAD_REQUEST):
+def reply_error_to_client(request, retcode, retbody_dict, status=status.HTTP_400_BAD_REQUEST):
     '''
         api reply error message to client
     '''
-    reply = build_reply(retcode, retbody)
+    reply = build_reply(retbody_dict, retcode)
     response = Response(reply, status)
     response['Access-Control-Allow-Origin'] = '*'
     return response
 
-def reply_success_to_client(request, reply):
+def reply_success_to_client(request, reply_dict):
     '''
         api reply error message to client
-        @param data: request recevied from ws in json format
+        @type reply: dict 
     '''
-    status = HTTP_STATUS[request.method]
-    response = Response(reply, status)
+    status = HTTP_SUCCESS_STATUS[request.method]
+    reply = build_reply(reply_dict)
+    response = Response(reply_dict, status)
+
     response['Access-Control-Allow-Origin'] = '*'
     return response
 
-def check_reply_to_client(request, reply):
+def check_reply_to_client(request, reply_json):
     '''
         check reply(json) from ws and reply to client
     '''
-    ret = json.loads(reply)
+    ret = json.loads(reply_json)
 
     if ret['retcode'] != 0:
         return reply_error_to_client(request, ret['retcode'], ret['retbody'], status.HTTP_500_INTERNAL_SERVER_ERROR)
     else:
-        return reply_success_to_client(request, reply)
+        return reply_success_to_client(request, ret['retbody'])

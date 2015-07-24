@@ -17,8 +17,16 @@ def build_reply(retbody={}, retcode=0):
         'retcode': retcode,
         'retbody': retbody
     }
+    return reply
 
-    return json.dumps(reply)
+def parse_api_repy(reply_json):
+    '''
+    '''
+    reply = json.loads(reply_json)
+    if reply['retcode'] != 0:
+        pass
+    else:
+        return reply
 
 def reply_error_to_client(request, retcode, retbody_dict, status=status.HTTP_400_BAD_REQUEST):
     '''
@@ -36,7 +44,7 @@ def reply_success_to_client(request, reply_dict):
     '''
     status = HTTP_SUCCESS_STATUS[request.method]
     reply = build_reply(reply_dict)
-    response = Response(reply_dict, status)
+    response = Response(reply, status)
 
     response['Access-Control-Allow-Origin'] = '*'
     return response

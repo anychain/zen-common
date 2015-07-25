@@ -207,26 +207,26 @@ class OrganizationDetailReq(APIReq):
     action = CONST.ACTION_ORGANIZATION_DETAIL
 
 # 8) state request
-class StateListReq(APIReq):
-    resource = CONST.RESOURCE_STATE
-    action = CONST.ACTION_STATE_LIST
+class DatadictListReq(APIReq):
+    resource = CONST.RESOURCE_DATADICT
+    action = CONST.ACTION_DATADICT_LIST
 
-class StateCreateReq(APIReq):
-    resource = CONST.RESOURCE_STATE
-    action = CONST.ACTION_STATE_CREATE
-    required_params = ['name', 'description']
+class DatadictCreateReq(APIReq):
+    resource = CONST.RESOURCE_DATADICT
+    action = CONST.ACTION_DATADICT_CREATE
+    required_params = ['name', 'type']
 
-class StateUpdateReq(APIReq):
-    resource = CONST.RESOURCE_STATE
-    action = CONST.ACTION_STATE_UPDATE
+class DatadictUpdateReq(APIReq):
+    resource = CONST.RESOURCE_DATADICT
+    action = CONST.ACTION_DATADICT_UPDATE
 
-class StateDeleteReq(APIReq):
-    resource = CONST.RESOURCE_STATE
-    action = CONST.ACTION_STATE_DELETE
+class DatadictDeleteReq(APIReq):
+    resource = CONST.RESOURCE_DATADICT
+    action = CONST.ACTION_DATADICT_DELETE
 
-class StateDetailReq(APIReq):
-    resource = CONST.RESOURCE_STATE
-    action = CONST.ACTION_STATE_DETAIL
+class DatadictDetailReq(APIReq):
+    resource = CONST.RESOURCE_DATADICT
+    action = CONST.ACTION_DATADICT_DETAIL
 
 
 #if __name__ == '__main__':

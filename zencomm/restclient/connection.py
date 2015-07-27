@@ -196,6 +196,7 @@ class RestClient(object):
     def send_request(self, path, params, method='GET', retry_time=3):
         ''' 
             @param parms: dict user request 
+            @return: response from user, json
         '''
         conn = self._get_conn()
         retry_cnt = 0

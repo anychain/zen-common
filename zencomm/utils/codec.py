@@ -11,6 +11,7 @@ common encoding utils
 import base64
 import zencomm.log as logging
 
+
 def base64_encode(src):
     '''
         encode src with base64

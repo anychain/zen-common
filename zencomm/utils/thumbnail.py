@@ -54,3 +54,4 @@ if __name__ == "__main__":
         thumb_nail_file.close()
 
     print "please check thumnail file at /tmp/test_thumbnail.jpg"
+

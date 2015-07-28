@@ -41,8 +41,8 @@ if __name__ == "__main__":
     import sys
     import os
     if len(sys.argv) == 1:
-      print "please input the file name"
-      sys.exit(1)
+        print "please input the file name"
+        sys.exit(1)
     img_src = sys.argv[1]
     img_path = os.path.abspath(img_src)
     file_name = os.path.basename(img_path)
@@ -54,4 +54,3 @@ if __name__ == "__main__":
         thumb_nail_file.close()
 
     print "please check thumnail file at /tmp/test_thumbnail.jpg"
-

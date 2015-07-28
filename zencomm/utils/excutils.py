@@ -138,7 +138,7 @@ def forever_retry_uncaught_exceptions(infunc):
                         this_exc_message != last_exc_message):
                     logging.exception(
                         'Unexpected exception occurred %d time(s)... '
-                            'retrying.' % exc_count)
+                        'retrying.' % exc_count)
                     last_log_time = cur_time
                     last_exc_message = this_exc_message
                     exc_count = 0

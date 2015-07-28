@@ -29,6 +29,7 @@ except AttributeError:
         # Ok fallback to the non-monotonic one...
         now = time.time
 
+
 def isotime(at=None, subsecond=False):
     """Stringify time in ISO 8601 format.
 
@@ -71,6 +72,7 @@ def strtime(at=None, fmt=PERFECT_TIME_FORMAT):
         at = utcnow()
     return at.strftime(fmt)
 
+
 def strdate(at=None, fmt=PERFECT_DATE_FORMAT):
     """Returns formatted date.
     """
@@ -78,14 +80,17 @@ def strdate(at=None, fmt=PERFECT_DATE_FORMAT):
         at = utcnow()
     return at.strftime(fmt)
 
+
 def parse_strtime(timestr, fmt=PERFECT_TIME_FORMAT):
     """Turn a formatted time back into a datetime."""
     return datetime.datetime.strptime(timestr, fmt)
+
 
 def parse_strdate(datestr, fmt=PERFECT_DATE_FORMAT):
     """Turn a formatted date back into a date."""
     dt = datetime.datetime.strptime(datestr, fmt)
     return datetime.date(dt.year, dt.month, dt.day)
+
 
 def normalize_time(timestamp):
     """Normalize time in arbitrary timezone to UTC naive object."""

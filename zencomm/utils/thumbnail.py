@@ -2,7 +2,7 @@ import zencomm.log as logging
 from PIL import Image
 import StringIO
 
-THUMBNAIL_SIZE = (128, 128)
+THUMBNAIL_SIZE = (28, 28)
 
 
 def create_thumbnail(file_content, file_type, file_size=THUMBNAIL_SIZE):
@@ -37,13 +37,20 @@ def create_thumbnail(file_content, file_type, file_size=THUMBNAIL_SIZE):
             ouput_buf.close()
 
 if __name__ == "__main__":
+
     import sys
     import os
-    img_src = sys.argv[0]
+    if len(sys.argv) == 1:
+      print "please input the file name"
+      sys.exit(1)
+    img_src = sys.argv[1]
     img_path = os.path.abspath(img_src)
     file_name = os.path.basename(img_path)
-    file_type = file_name.split('.')[1]
+    file_type = 'jpeg'
+    thumb_nail_file = open('/tmp/test_thumbnail.jpg', 'w')
     with open(img_src, 'r') as content:
-        thumnail = create_thumbnail(content.read(), file_type)
+        thumbnail = create_thumbnail(content.read(), file_type)
+        thumb_nail_file.write(thumbnail)
+        thumb_nail_file.close()
 
-    print thumnail
+    print "please check thumnail file at /tmp/test_thumbnail.jpg"

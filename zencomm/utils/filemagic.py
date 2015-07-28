@@ -18,7 +18,7 @@ def get_file_type(filename):
     '''
 
     try:
-        ftype = magic.from_file(filename, mime = True)
+        ftype = magic.from_file(filename, mime=True)
     except Exception as e:
         logging.error("failed to file type for file %s with error: %s"
                       % (filename, e))

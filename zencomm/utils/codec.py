@@ -11,6 +11,7 @@ common encoding utils
 import base64
 import zencomm.log as logging
 
+
 def base64_encode(src):
     '''
         encode src with base64
@@ -21,6 +22,7 @@ def base64_encode(src):
     except Exception as e:
         logging.error('encode base64string error: [%s]' % e)
     return result
+
 
 def base64_decode(src):
     '''

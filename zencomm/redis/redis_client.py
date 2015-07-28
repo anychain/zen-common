@@ -1,5 +1,6 @@
 import redis
 
+
 class RedisClient():
     def __init__(self, host='127.0.0.1', port='6379'):
         '''
@@ -12,7 +13,8 @@ class RedisClient():
             set key/value to redis
             @param key: key name to set
             @param value: value for the key
-            @param ep_time: expire_time(secs) for the key, 0 if the key does not expire  
+            @param ep_time: expire_time(secs) for the key,
+                            0 if the key does not expire
             @return: True if the key exists, False if not
         '''
 
@@ -32,7 +34,7 @@ class RedisClient():
     def get(self, key):
         '''
             get key/value from redis
-            @param key: key to get value 
+            @param key: key to get value
             @return: the value of the key, None if key does not exist
         '''
 
@@ -50,7 +52,7 @@ class RedisClient():
     def delete(self, key):
         '''
             @param key: key to delete
-            @return: True if key is deleted, False if not 
+            @return: True if key is deleted, False if not
         '''
         redis_cli = redis.Redis(connection_pool=self.conntion_pool)
         try:
@@ -77,4 +79,5 @@ if __name__ == '__main__':
 
     import time
     time.sleep(3)
-    print 'After 3 seconds, the key is expired, try get key country: %s' % redis_cli.get('country')
+    print ('After 3 seconds, the key expired, try get key '
+           'country: %s') % redis_cli.get('country')

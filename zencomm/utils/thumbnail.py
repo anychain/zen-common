@@ -2,7 +2,7 @@ import zencomm.log as logging
 from PIL import Image
 import StringIO
 
-THUMBNAIL_SIZE = (28, 28)
+THUMBNAIL_SIZE = (2000, 2000)
 
 
 def create_thumbnail(file_content, file_type, file_size=THUMBNAIL_SIZE):

@@ -300,4 +300,3 @@ class AddrcodeDeleteReq(APIReq):
 class AddrcodeDetailReq(APIReq):
     resource = CONST.RESOURCE_ADDRCODE
     action = CONST.ACTION_ADDRCODE_DETAIL
-

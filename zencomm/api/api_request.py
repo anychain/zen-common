@@ -273,3 +273,31 @@ class DatadictDeleteReq(APIReq):
 class DatadictDetailReq(APIReq):
     resource = CONST.RESOURCE_DATADICT
     action = CONST.ACTION_DATADICT_DETAIL
+
+
+# 8) Address code  request
+class AddrcodeListReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_LIST
+
+
+class AddrcodeCreateReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_CREATE
+    required_params = ['code', 'address']
+
+
+class AddrcodeUpdateReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_UPDATE
+
+
+class AddrcodeDeleteReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_DELETE
+
+
+class AddrcodeDetailReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_DETAIL
+

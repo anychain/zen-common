@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework import status
 import json
+from zencomm.log import logger
 
 HTTP_SUCCESS_STATUS = {
     'POST': status.HTTP_201_CREATED,
@@ -24,11 +25,11 @@ def build_reply(retbody={}, retcode=0):
 def parse_api_repy(reply_json):
     '''
     '''
-    reply = json.loads(reply_json)
-    if reply['retcode'] != 0:
+    try:
+        reply = json.loads(reply_json)
+    except:
         pass
-    else:
-        return reply
+    return reply
 
 
 def reply_error_to_client(request, retcode, retbody_dict,

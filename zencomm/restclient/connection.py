@@ -217,8 +217,14 @@ class RestClient(object):
                     self._set_conn(conn)
                     return response.read()
                 else:
+                    # if retcode and retbody in reply,
+                    # the connection is successful
+                    rest_reply = response.read()
+                    if rest_reply.find('retbody') != -1:
+                        return rest_reply
+                    # log error and retry
                     logger.error("Request failed with status: %d, error: %s "
-                                 % (response.status, response.read()))
+                                 % (response.status, rest_reply))
                     conn = self._get_conn()
             except Exception, e:
                 # only retry for timeout error

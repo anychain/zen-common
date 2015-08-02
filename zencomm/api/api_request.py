@@ -5,7 +5,7 @@
 import json
 
 from zencomm.api import constants as CONST
-
+from zencomm.log import logger
 
 class APIReq():
     """Base zen api request
@@ -47,6 +47,7 @@ class APIReq():
                                                                self.resource)
                     break
         if errmsg:
+            logger.error("Api request validation failed with error %s" % errmsg)
             return False, errmsg
         else:
             return True, "The api request is valid"

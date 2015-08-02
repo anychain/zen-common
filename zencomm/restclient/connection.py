@@ -4,7 +4,7 @@ import random
 import threading
 import httplib
 import traceback
-from zencomm import log as logging
+from zencomm.log import logger
 
 
 class ConnectionQueue(object):
@@ -217,26 +217,26 @@ class RestClient(object):
                     self._set_conn(conn)
                     return response.read()
                 else:
-                    logging.error("Request failed with status: %d, error: %s "
-                                  % (response.status, response.read()))
+                    logger.error("Request failed with status: %d, error: %s "
+                                 % (response.status, response.read()))
                     conn = self._get_conn()
             except Exception, e:
                 # only retry for timeout error
                 # print traceback.format_exc()
                 if isinstance(e, socket.timeout):
-                    logging.error("timeout for request")
-                    logging.exception(e)
+                    logger.error("timeout for request")
+                    logger.exception(e)
                     return None
-                print "--> request failed with exception %s" % e
+                logger.error("--> request failed with exception %s" % e)
                 conn = self._get_conn()
             retry_cnt += 1
             # do not sleep for the first 2 retries
             if retry_cnt <= 2:
                 continue
             time.sleep(next_sleep)
-            logging.warn("retry request for [%d] time after sleep [%.2f] secs"
-                         % (retry_cnt, next_sleep))
+            logger.warn("retry request for [%d] time after sleep [%.2f] secs"
+                        % (retry_cnt, next_sleep))
 
-        logging.error("send request failed after retry for [%d] times"
-                      % (retry_cnt))
+        logger.error("send request failed after retry for [%d] times"
+                     % (retry_cnt))
         return None

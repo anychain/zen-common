@@ -1,4 +1,4 @@
-import zencomm.log as logging
+from zencomm.log import logger
 from PIL import Image
 import StringIO
 
@@ -25,8 +25,8 @@ def create_thumbnail(file_content, file_type, file_size=THUMBNAIL_SIZE):
         thmnail = output_buf.getvalue()
         return thmnail
     except Exception, e:
-        logging.warn('failed to create thumnail with exception : [%s]' % e)
-        logging.exception(e)
+        logger.warn('failed to create thumnail with exception : [%s]' % e)
+        logger.exception(e)
         return None
     finally:
         if im:

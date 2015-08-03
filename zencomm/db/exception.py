@@ -181,4 +181,4 @@ class NoEngineContextEstablished(AttributeError):
     """
 
 class InvalidInput(DBError):
-    message = _("Invalid input for db operation: %(error_message)s.")
+    message = "Invalid input for db operation: %(error_message)s."

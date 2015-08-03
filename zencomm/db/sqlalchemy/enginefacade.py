@@ -891,11 +891,6 @@ class LegacyEngineFacade(object):
                                  allow other greenthreads to run (defaults to
                                  True)
         """
-        warnings.warn(
-            "EngineFacade is deprecated; please use "
-            "oslo.db.sqlalchemy.enginefacade",
-            exception.OsloDBDeprecationWarning,
-            stacklevel=2)
 
         if _factory:
             self._factory = _factory

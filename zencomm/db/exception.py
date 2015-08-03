@@ -1,46 +1,5 @@
-# Copyright 2010 United States Government as represented by the
-# Administrator of the National Aeronautics and Space Administration.
-# All Rights Reserved.
-#
-#    Licensed under the Apache License, Version 2.0 (the "License"); you may
-#    not use this file except in compliance with the License. You may obtain
-#    a copy of the License at
-#
-#         http://www.apache.org/licenses/LICENSE-2.0
-#
-#    Unless required by applicable law or agreed to in writing, software
-#    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-#    License for the specific language governing permissions and limitations
-#    under the License.
-
 """DB related custom exceptions.
 
-Custom exceptions intended to determine the causes of specific database
-errors. This module provides more generic exceptions than the database-specific
-driver libraries, and so users of oslo.db can catch these no matter which
-database the application is using. Most of the exceptions are wrappers. Wrapper
-exceptions take an original exception as positional argument and keep it for
-purposes of deeper debug.
-
-Example::
-
-    try:
-        statement(arg)
-    except sqlalchemy.exc.OperationalError as e:
-        raise DBDuplicateEntry(e)
-
-
-This is useful to determine more specific error cases further at execution,
-when you need to add some extra information to an error message. Wrapper
-exceptions takes care about original error message displaying to not to loose
-low level cause of an error. All the database api exceptions wrapped into
-the specific exceptions provided belove.
-
-
-Please use only database related custom exceptions with database manipulations
-with `try/except` statement. This is required for consistent handling of
-database errors.
 """
 
 import six
@@ -221,28 +180,5 @@ class NoEngineContextEstablished(AttributeError):
 
     """
 
-
-class NotSupportedWarning(Warning):
-    """Warn that an argument or call that was passed is not supported.
-
-    This subclasses Warning so that it can be filtered as a distinct
-    category.
-
-    .. seealso::
-
-        https://docs.python.org/2/library/warnings.html
-
-    """
-
-
-class OsloDBDeprecationWarning(DeprecationWarning):
-    """Issued per usage of a deprecated API.
-
-    This subclasses DeprecationWarning so that it can be filtered as a distinct
-    category.
-
-    .. seealso::
-
-        https://docs.python.org/2/library/warnings.html
-
-    """
+class InvalidInput(DBError):
+    message = _("Invalid input for db operation: %(error_message)s.")

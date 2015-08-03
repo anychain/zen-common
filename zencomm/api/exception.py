@@ -47,3 +47,8 @@ class ChildCreateFailure(ZenException):
 class FamilyCreateFailure(ZenException):
     msg_fmt = "Failed to create family: %(reason)s"
     error_code = ErrCode.FAMILY_CREATION_FAILURE
+
+
+class InvalidSortKey(ZenException):
+    msg_fmt = "Sort key supplied for db query was not valid."
+    error_code = ErrCode.UNKNOWN_SERVER_FAILUER

@@ -280,7 +280,7 @@ class DBAPI(object):
 
 
 def _get_regexp_op_for_connection(dbtype):
-    #db_string = db_connection.split(':')[0].split('+')[0]
+    # db_string = db_connection.split(':')[0].split('+')[0]
     regexp_op_map = {
         'postgresql': '~',
         'mysql': 'REGEXP',
@@ -289,7 +289,7 @@ def _get_regexp_op_for_connection(dbtype):
     return regexp_op_map.get(dbtype, 'LIKE')
 
 
-def _exact_query_filter(model, query, filters, legal_keys):
+def exact_query_filter(model, query, filters, legal_keys):
     """Applies exact match filtering to an model query.
 
     Returns the updated query.  Modifies filters argument to remove
@@ -329,7 +329,7 @@ def _exact_query_filter(model, query, filters, legal_keys):
     return query
 
 
-def _regex_query_filter(model, query, filters):
+def regex_query_filter(model, query, filters):
     """Applies regular expression filtering to an model query.
 
     Returns the updated query.
@@ -338,7 +338,7 @@ def _regex_query_filter(model, query, filters):
     :param filters: dictionary of filters with regex values
     """
 
-    #db_regexp_op = _get_regexp_op_for_connection(CONF.database.connection)
+    # db_regexp_op = _get_regexp_op_for_connection(CONF.database.connection)
     db_regexp_op = _get_regexp_op_for_connection('postgresql')
     for filter_name in filters:
         try:

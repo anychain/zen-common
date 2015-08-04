@@ -101,7 +101,7 @@ def paginate_query(query, model, limit, sort_keys, marker=None,
             }[current_sort_dir]
         except KeyError:
             raise ValueError(("Unknown sort direction, "
-                               "must be 'desc' or 'asc'"))
+                              "must be 'desc' or 'asc'"))
         try:
             inspect(model).\
                 all_orm_descriptors[current_sort_key]
@@ -160,7 +160,7 @@ def to_list(x, default=None):
 def _read_deleted_filter(query, db_model, deleted):
     if 'deleted' not in db_model.__table__.columns:
         raise ValueError(("There is no `deleted` column in `%s` table. "
-                           "Project doesn't use soft-deleted feature.")
+                          "Project doesn't use soft-deleted feature.")
                          % db_model.__name__)
 
     default_deleted_value = db_model.__table__.c.deleted.default.arg
@@ -168,19 +168,6 @@ def _read_deleted_filter(query, db_model, deleted):
         query = query.filter(db_model.deleted != default_deleted_value)
     else:
         query = query.filter(db_model.deleted == default_deleted_value)
-    return query
-
-
-def _project_filter(query, db_model, project_id):
-    if 'project_id' not in db_model.__table__.columns:
-        raise ValueError(("There is no `project_id` column in `%s` table.")
-                         % db_model.__name__)
-
-    if isinstance(project_id, (list, tuple, set)):
-        query = query.filter(db_model.project_id.in_(project_id))
-    else:
-        query = query.filter(db_model.project_id == project_id)
-
     return query
 
 
@@ -356,14 +343,14 @@ def _get_not_supported_column(col_name_col_instance, column_name):
         column = col_name_col_instance[column_name]
     except KeyError:
         msg = ("Please specify column %s in col_name_col_instance "
-                "param. It is required because column has unsupported "
-                "type by SQLite.")
+               "param. It is required because column has unsupported "
+               "type by SQLite.")
         raise exception.ColumnError(msg % column_name)
 
     if not isinstance(column, Column):
         msg = ("col_name_col_instance param has wrong type of "
-                "column instance for column %s It should be instance "
-                "of sqlalchemy.Column.")
+               "column instance for column %s It should be instance "
+               "of sqlalchemy.Column.")
         raise exception.ColumnError(msg % column_name)
     return column
 
@@ -406,7 +393,7 @@ def drop_old_duplicate_entries_from_table(migrate_engine, table_name,
             [table.c.id]).where(delete_condition)
         for row in migrate_engine.execute(rows_to_delete_select).fetchall():
             LOG.info(("Deleting duplicated row with id: %(id)s from table: "
-                         "%(table)s"), dict(id=row[0], table=table_name))
+                      "%(table)s"), dict(id=row[0], table=table_name))
 
         if use_soft_delete:
             delete_statement = table.update().\

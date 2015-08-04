@@ -301,6 +301,8 @@ def exact_query_filter(model, query, filters, legal_keys):
                     be performed, while exact matching ('==' operator)
                     is used for other values
     :param legal_keys: list of keys to apply exact filtering to
+    Note: take care that filters is popped here, so it's value will
+        be changed in this function
     """
 
     filter_dict = {}

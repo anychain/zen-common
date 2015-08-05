@@ -74,6 +74,12 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         else:
             return value
 
+    if isinstance(value, datetime.date):
+        if convert_datetime:
+            return value.strftime(timeutils.PERFECT_DATE_FORMAT)
+        else:
+            return value
+
     if isinstance(value, uuid.UUID):
         return six.text_type(value)
 

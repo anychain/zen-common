@@ -99,14 +99,15 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         if isinstance(value, dict):
             return dict((recursive(k), recursive(v))
                         for k, v in six.iteritems(value))
-        elif hasattr(value, 'iteritems'):
-            return recursive(dict(value.iteritems()), level=level + 1)
-        elif hasattr(value, '__iter__'):
-            return list(map(recursive, value))
-        elif convert_instances and hasattr(value, '__dict__'):
-            # Likely an instance of something. Watch for cycles.
-            # Ignore class member vars.
-            return recursive(value.__dict__, level=level + 1)
+        # comment complicated data structures
+        # elif hasattr(value, 'iteritems'):
+        #     return recursive(dict(value.iteritems()), level=level + 1)
+        # elif hasattr(value, '__iter__'):
+        #     return list(map(recursive, value))
+        # elif convert_instances and hasattr(value, '__dict__'):
+             # Likely an instance of something. Watch for cycles.
+             # Ignore class member vars.
+        #     return recursive(value.__dict__, level=level + 1)
     except TypeError:
         # Class objects are tricky since they may define something like
         # __iter__ defined but it isn't callable as list().

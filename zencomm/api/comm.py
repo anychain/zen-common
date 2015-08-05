@@ -26,6 +26,9 @@ def build_reply(retbody={}, retcode=0):
 
 def parse_api_repy(reply_json):
     '''
+        @param reply_json: reply from api side, should be in following format:
+            {'retcode': '', 'retbody': ''}
+        @return: api reply in json format
     '''
     reply = ''
     try:

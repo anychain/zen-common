@@ -86,7 +86,7 @@ class UserListReq(APIReq):
 class UserDetailReq(APIReq):
     resource = CONST.RESOURCE_USER
     action = CONST.ACTION_USER_DETAIL
-    required_params = ['phone']
+    required_params = ['id']
 
 
 class UserResetPasswdReq(APIReq):

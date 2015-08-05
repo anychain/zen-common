@@ -4,7 +4,9 @@ import random
 import threading
 import httplib
 import traceback
+import json
 from zencomm.log import logger
+from duplicity.path import Path
 
 
 class ConnectionQueue(object):
@@ -202,15 +204,20 @@ class RestClient(object):
             @param parms: dict user request
             @return: response from user, json
         '''
+        if path[-1] != '/':
+            path = path + '/'
         conn = self._get_conn()
         retry_cnt = 0
         while retry_cnt < retry_time:
             # Use binary exponential backoff to desynchronize client requests
             next_sleep = random.random() * (2 ** retry_cnt) * 0.1
             try:
+                if isinstance(params, dict):
+                    params = json.dumps(params)
                 # request.authorize(self)
                 conn.request(method, path, params,
                              {"Content-Type": "application/json"})
+
                 response = conn.getresponse()
 
                 if response.status in [200, 201, 204]:
@@ -233,7 +240,8 @@ class RestClient(object):
                     logger.error("timeout for request")
                     logger.exception(e)
                     return None
-                logger.error("--> request failed with exception %s" % e)
+                logger.error("restclient request failed with exception %s" % e)
+                logger.exception(e)
                 conn = self._get_conn()
             retry_cnt += 1
             # do not sleep for the first 2 retries

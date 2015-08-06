@@ -34,10 +34,10 @@ def parse_api_repy(reply_json):
     try:
         reply = json.loads(reply_json)
     except Exception as e:
-        logger.error('Invalid api response(not json format): <%s>'
-                     % reply_json)
+        errmsg = ("api reply<type:%s>: <%s> is not in json format"
+                  % (type(reply_json), reply_json))
+        logger.error(errmsg)
         logger.exception(e)
-        errmsg = "api reply <%s> is not in json format" % reply_json
         raise exception.InternalServerFailuer(reason=errmsg)
     return reply
 

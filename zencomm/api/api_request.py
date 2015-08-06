@@ -71,6 +71,7 @@ class UserCreateReq(APIReq):
 class UserUpdateReq(APIReq):
     resource = CONST.RESOURCE_USER
     action = CONST.ACTION_USER_UPDATE
+    required_params = ['id']
 
 
 class UserDeleteReq(APIReq):

@@ -6,7 +6,6 @@ import httplib
 import traceback
 import json
 from zencomm.log import logger
-from duplicity.path import Path
 
 
 class ConnectionQueue(object):
@@ -222,7 +221,10 @@ class RestClient(object):
 
                 if response.status in [200, 201, 204]:
                     self._set_conn(conn)
-                    return response.read()
+                    apiret = response.read()
+                    logger.info('restclient got response from api server: <%s>'
+                                % apiret)
+                    return apiret
                 else:
                     # if retcode and retbody in reply,
                     # the connection is successful

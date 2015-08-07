@@ -6,6 +6,7 @@ import httplib
 import traceback
 import json
 from zencomm.log import logger
+from zencomm.api.comm import parse_api_repy
 
 
 class ConnectionQueue(object):
@@ -201,7 +202,7 @@ class RestClient(object):
     def send_request(self, path, params, method='GET', retry_time=3):
         '''
             @param parms: dict user request
-            @return: response from user, json
+            @return: response from user, dict
         '''
         if path[-1] != '/':
             path = path + '/'
@@ -221,15 +222,15 @@ class RestClient(object):
 
                 if response.status in [200, 201, 204]:
                     self._set_conn(conn)
-                    apiret = response.read()
+                    apiret = parse_api_repy(response.read())
                     logger.info('restclient got response from api server: <%s>'
                                 % apiret)
                     return apiret
                 else:
                     # if retcode and retbody in reply,
                     # the connection is successful
-                    rest_reply = response.read()
-                    if rest_reply.find('retbody') != -1:
+                    rest_reply = parse_api_repy(response.read())
+                    if 'retbody' in rest_reply:
                         return rest_reply
                     # log error and retry
                     logger.error("Request failed with status: %d, error: %s "
@@ -237,7 +238,7 @@ class RestClient(object):
                     conn = self._get_conn()
             except Exception, e:
                 # only retry for timeout error
-                # print traceback.format_exc()
+                # print tracebacks.format_exc()
                 if isinstance(e, socket.timeout):
                     logger.error("timeout for request")
                     logger.exception(e)

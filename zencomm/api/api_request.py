@@ -151,7 +151,7 @@ class ChildListReq(APIReq):
 class ChildCreateReq(APIReq):
     resource = CONST.RESOURCE_CHILD
     action = CONST.ACTION_CHILD_CREATE
-    required_params = ['name']
+    required_params = ['name', 'birthday']
 
 
 class ChildUpdateReq(APIReq):

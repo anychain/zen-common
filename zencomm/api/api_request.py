@@ -305,6 +305,7 @@ class AddrcodeDetailReq(APIReq):
     resource = CONST.RESOURCE_ADDRCODE
     action = CONST.ACTION_ADDRCODE_DETAIL
 
+
 # 9) User Organization Link request
 class UserOrganizationLinkListReq(APIReq):
     resource = CONST.RESOURCE_ADDRCODE
@@ -330,5 +331,3 @@ class UserOrganizationLinkDeleteReq(APIReq):
 class UserOrganizationLinkDetailReq(APIReq):
     resource = CONST.RESOURCE_ADDRCODE
     action = CONST.ACTION_ADDRCODE_DETAIL
-
-

@@ -304,3 +304,31 @@ class AddrcodeDeleteReq(APIReq):
 class AddrcodeDetailReq(APIReq):
     resource = CONST.RESOURCE_ADDRCODE
     action = CONST.ACTION_ADDRCODE_DETAIL
+
+# 9) User Organization Link request
+class UserOrganizationLinkListReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_LIST
+
+
+class UserOrganizationLinkCreateReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_CREATE
+    required_params = ['user_id', 'organization_id']
+
+
+class UserOrganizationLinkUpdateReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_UPDATE
+
+
+class UserOrganizationLinkDeleteReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_DELETE
+
+
+class UserOrganizationLinkDetailReq(APIReq):
+    resource = CONST.RESOURCE_ADDRCODE
+    action = CONST.ACTION_ADDRCODE_DETAIL
+
+

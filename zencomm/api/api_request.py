@@ -262,6 +262,16 @@ class OrganizationDetailReq(APIReq):
     action = CONST.ACTION_ORGANIZATION_DETAIL
 
 
+class OrganizationAdminListReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_ADMIN_LIST
+
+
+class OrganizationActivityListReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_ACTIVITY_LIST
+
+
 # 8) state request
 class DatadictListReq(APIReq):
     resource = CONST.RESOURCE_DATADICT

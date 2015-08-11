@@ -95,6 +95,16 @@ class UserResetPasswdReq(APIReq):
     action = CONST.ACTION_USER_RESET_PASSWD
 
 
+class UserChildList(APIReq):
+    resource = CONST.RESOURCE_USER
+    action = CONST.ACTION_USER_CHILD_LIST
+
+
+class UserAttendActivityList(APIReq):
+    resource = CONST.RESOURCE_USER
+    action = CONST.ACTION_USER_ATTEND_ACTIVITY_LIST
+
+
 # 2) session request
 class SessionCreateReq(APIReq):
     resource = CONST.RESOURCE_SESSION

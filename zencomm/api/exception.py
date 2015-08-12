@@ -44,6 +44,11 @@ class ChildCreateFailure(ZenException):
     error_code = ErrCode.CHILD_CREATION_FAILURE
 
 
+class ChildAlreadyExist(ZenException):
+    msg_fmt = "Child already exist: %(reason)s"
+    error_code = ErrCode.USER_ALREADY_REGISTERED
+
+
 class FamilyCreateFailure(ZenException):
     msg_fmt = "Failed to create family: %(reason)s"
     error_code = ErrCode.FAMILY_CREATION_FAILURE

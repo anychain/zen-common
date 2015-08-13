@@ -244,6 +244,7 @@ class OrganizationCreateReq(APIReq):
     action = CONST.ACTION_ORGANIZATION_CREATE
     required_params = ['name', 'type', 'address', 'county']
 
+
 class OrganizationUpdateReq(APIReq):
     resource = CONST.RESOURCE_ORGANIZATION
     action = CONST.ACTION_ORGANIZATION_UPDATE

@@ -215,8 +215,7 @@ class BranchListReq(APIReq):
 class BranchCreateReq(APIReq):
     resource = CONST.RESOURCE_BRANCH
     action = CONST.ACTION_BRANCH_CREATE
-    required_params = ['name', 'type', 'address', 'address_code',
-                       'register_time', 'found_time', 'state_id']
+    required_params = ['name', 'type', 'address', 'county']
 
 
 class BranchUpdateReq(APIReq):
@@ -243,9 +242,7 @@ class OrganizationListReq(APIReq):
 class OrganizationCreateReq(APIReq):
     resource = CONST.RESOURCE_ORGANIZATION
     action = CONST.ACTION_ORGANIZATION_CREATE
-    required_params = ['name', 'type', 'address', 'address_code',
-                       'register_time', 'found_time', 'state_id']
-
+    required_params = ['name', 'type', 'address', 'county']
 
 class OrganizationUpdateReq(APIReq):
     resource = CONST.RESOURCE_ORGANIZATION

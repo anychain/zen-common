@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # constants definition
 
 # 1) Data Dictionary Const
@@ -18,5 +19,5 @@ USER_TYPE_DONATOR = 'donator'
 USER_TYPE_GOVERNMENT = 'government'
 
 # 4)State
-STATE_NOT_APPROVE = '未审核'
-STATE_APPROVEED = '审核通过'
+STATE_NOT_APPROVE = unicode(u'未审批')
+STATE_APPROVEED = unicode(u'审批通过')

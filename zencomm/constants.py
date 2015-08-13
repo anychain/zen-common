@@ -16,3 +16,7 @@ USER_TYPE_NORMAL = 'normal'
 USER_TYPE_ADMIN = 'admin'
 USER_TYPE_DONATOR = 'donator'
 USER_TYPE_GOVERNMENT = 'government'
+
+# 4)State
+STATE_NOT_APPROVE = '未审核'
+STATE_APPROVEED = '审核通过'

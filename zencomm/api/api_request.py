@@ -126,8 +126,9 @@ class SessionRenewReq(APIReq):
 class ActivityCreateReq(APIReq):
     resource = CONST.RESOURCE_ACTIVITY
     action = CONST.ACTION_ACTIVITY_CREATE
-    required_params = ['name', 'begintime', 'endtime', 'addrcode', 'address', 'size',
-                       'type', 'subject','content', 'poster']
+    required_params = ['name', 'begintime', 'endtime', 'addrcode',
+                       'address', 'size',
+                       'type', 'subject', 'content', 'poster']
 
 
 class ActivityUpdateReq(APIReq):

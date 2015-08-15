@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+
+#
+# Licensed Materials - Property of esse.io
+#
+# (C) Copyright esse.io. 2015 All Rights Reserved
+#
+# Author: frank (frank@esse.io)
+#
+#
+
+
 '''
     This files records allthe error code for api
 '''

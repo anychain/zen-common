@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+
+#
+# Licensed Materials - Property of esse.io
+#
+# (C) Copyright esse.io. 2015 All Rights Reserved
+#
+# Author: frank (frank@esse.io)
+#
+#
+
+
 # commen error code
 INVALID_PARAMETERS_PROVIDED = 1000
 

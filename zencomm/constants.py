@@ -21,3 +21,9 @@ USER_TYPE_GOVERNMENT = 'government'
 # 4)State
 STATE_NOT_APPROVE = unicode(u'未审批')
 STATE_APPROVEED = unicode(u'审批通过')
+
+# 5) admin TYPES
+ADMIN_TYPE_NORMAL = unicode(u'普通管理员')
+ADMIN_TYPE_DONATOR = unicode(u'捐赠者')
+ADMIN_TYPE_GOVERNMENT = unicode(u'政府工作人员')
+

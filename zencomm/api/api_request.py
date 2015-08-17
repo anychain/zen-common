@@ -362,5 +362,3 @@ class AdminDetailReq(APIReq):
 class AdminResetPasswdReq(APIReq):
     resource = CONST.RESOURCE_ADMIN
     action = CONST.ACTION_ADMIN_RESET_PASSWD
-
-

@@ -328,3 +328,39 @@ class AddrcodeDeleteReq(APIReq):
 class AddrcodeDetailReq(APIReq):
     resource = CONST.RESOURCE_ADDRCODE
     action = CONST.ACTION_ADDRCODE_DETAIL
+
+
+# 9) admin request
+class AdminCreateReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_CREATE
+    required_params = ['passwd', 'phone']
+
+
+class AdminUpdateReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_UPDATE
+    required_params = ['id']
+
+
+class AdminDeleteReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_DELETE
+
+
+class AdminListReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_LIST
+
+
+class AdminDetailReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_DETAIL
+    required_params = ['id']
+
+
+class AdminResetPasswdReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_RESET_PASSWD
+
+

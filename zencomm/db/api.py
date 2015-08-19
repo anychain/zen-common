@@ -341,7 +341,8 @@ def regex_query_filter(model, query, filters):
     """
 
     # db_regexp_op = _get_regexp_op_for_connection(CONF.database.connection)
-    db_regexp_op = _get_regexp_op_for_connection('postgresql')
+    #db_regexp_op = _get_regexp_op_for_connection('postgresql')
+    db_regexp_op = _get_regexp_op_for_connection('sqlite')
     for filter_name in filters:
         try:
             column_attr = getattr(model, filter_name)

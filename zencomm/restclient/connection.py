@@ -160,8 +160,8 @@ class RestClient(object):
     ''' This connection will be used to connect to rest service
     '''
 
-    def __init__(self, host, port, protocol, pool=None, msg_time_out=10,
-                 http_socket_timeout=10):
+    def __init__(self, host, port, protocol, pool=None, msg_time_out=20,
+                 http_socket_timeout=20):
         '''
         @param pool - the connection pool
         @param host - the host to make the connection to

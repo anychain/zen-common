@@ -271,6 +271,11 @@ class OrganizationAdminListReq(APIReq):
     action = CONST.ACTION_ORGANIZATION_ADMIN_LIST
 
 
+class OrganizationAdminAddReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_ADMIN_ADD
+
+
 class OrganizationActivityListReq(APIReq):
     resource = CONST.RESOURCE_ORGANIZATION
     action = CONST.ACTION_ORGANIZATION_ACTIVITY_LIST
@@ -362,3 +367,13 @@ class AdminDetailReq(APIReq):
 class AdminResetPasswdReq(APIReq):
     resource = CONST.RESOURCE_ADMIN
     action = CONST.ACTION_ADMIN_RESET_PASSWD
+    
+
+class AdminOrganizationListReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_ORGANIZATION_LIST
+    
+    
+class AdminBranchListReq(APIReq):
+    resource = CONST.RESOURCE_ADMIN
+    action = CONST.ACTION_ADMIN_BRANCH_LIST 

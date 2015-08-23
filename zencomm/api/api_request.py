@@ -377,3 +377,29 @@ class AdminOrganizationListReq(APIReq):
 class AdminBranchListReq(APIReq):
     resource = CONST.RESOURCE_ADMIN
     action = CONST.ACTION_ADMIN_BRANCH_LIST
+
+# 10) news request
+class NewsCreateReq(APIReq):
+    resource = CONST.RESOURCE_NEWS
+    action = CONST.ACTION_NEWS_CREATE
+    required_params = ['name', 'summary', 'content', 'poster']
+
+
+class NewsUpdateReq(APIReq):
+    resource = CONST.RESOURCE_NEWS
+    action = CONST.ACTION_NEWS_UPDATE
+
+
+class NewsDeleteReq(APIReq):
+    resource = CONST.RESOURCE_NEWS
+    action = CONST.ACTION_NEWS_DELETE
+
+
+class NewsListReq(APIReq):
+    resource = CONST.RESOURCE_NEWS
+    action = CONST.ACTION_NEWS_LIST
+
+
+class NewsDetailReq(APIReq):
+    resource = CONST.RESOURCE_NEWS
+    action = CONST.ACTION_NEWS_DETAIL

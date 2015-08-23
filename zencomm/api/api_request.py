@@ -276,6 +276,11 @@ class OrganizationAdminAddReq(APIReq):
     action = CONST.ACTION_ORGANIZATION_ADMIN_ADD
 
 
+class OrganizationAdminDeleteReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_ADMIN_DELETE
+
+
 class OrganizationActivityListReq(APIReq):
     resource = CONST.RESOURCE_ORGANIZATION
     action = CONST.ACTION_ORGANIZATION_ACTIVITY_LIST

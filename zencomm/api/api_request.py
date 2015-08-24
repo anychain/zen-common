@@ -286,6 +286,11 @@ class OrganizationActivityListReq(APIReq):
     action = CONST.ACTION_ORGANIZATION_ACTIVITY_LIST
 
 
+class OrganizationAdminSearchReq(APIReq):
+    resource = CONST.RESOURCE_ORGANIZATION
+    action = CONST.ACTION_ORGANIZATION_ADMIN_SEARCH
+
+
 # 8) state request
 class DatadictListReq(APIReq):
     resource = CONST.RESOURCE_DATADICT

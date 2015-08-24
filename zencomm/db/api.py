@@ -17,6 +17,7 @@ from zencomm.utils import importutils
 import six
 
 from zencomm.db import exception
+from zencomm import constants as const
 
 
 LOG = logging.getLogger(__name__)
@@ -319,7 +320,10 @@ def exact_query_filter(model, query, filters, legal_keys):
         if isinstance(value, (list, tuple, set, frozenset)):
             # Looking for values in a list; apply to query directly
             column_attr = getattr(model, key)
-            query = query.filter(column_attr.in_(value))
+            if value[0] == const.NOT_IN:
+                query = query.filter(~column_attr.in_(value))
+            else:
+                query = query.filter(column_attr.in_(value))
         else:
             # OK, simple exact match; save for later
             filter_dict[key] = value
@@ -424,3 +428,4 @@ def process_sort_params(sort_keys, sort_dirs,
             result_dirs.append(default_dir_value)
 
     return result_keys, result_dirs
+

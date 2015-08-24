@@ -27,3 +27,7 @@ ADMIN_TYPE_NORMAL = unicode(u'普通管理员')
 ADMIN_TYPE_DONATOR = unicode(u'捐赠者')
 ADMIN_TYPE_GOVERNMENT = unicode(u'政府工作人员')
 
+# 6) NOT In
+NOT_IN = 'NOT_IN'
+
+

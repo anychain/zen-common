@@ -5,5 +5,6 @@ encoding//zencomm/api/constants.py=utf-8
 encoding//zencomm/api/error_code.py=utf-8
 encoding//zencomm/api/error_msg.py=utf-8
 encoding//zencomm/api/exception.py=utf-8
+encoding//zencomm/constants.py=utf-8
 encoding//zencomm/qrcode/qrcode.py=utf-8
 encoding//zencomm/utils/jsonutils.py=utf-8

@@ -38,3 +38,9 @@ NOT_IN = 'NOT_IN'
 NEWS_STATUS_PENDING = 'pending'
 NEWS_STATUS_APPROVED = 'approved'
 NEWS_STATUS_REJECTED = 'rejected'
+
+
+# 8) activity status
+ACTIVITY_STATUS_PENDING = 'pending'
+ACTIVITY_STATUS_APPROVED = 'approved'
+ACTIVITY_STATUS_REJECTED = 'rejected'

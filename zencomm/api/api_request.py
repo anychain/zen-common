@@ -414,3 +414,21 @@ class NewsListReq(APIReq):
 class NewsDetailReq(APIReq):
     resource = CONST.RESOURCE_NEWS
     action = CONST.ACTION_NEWS_DETAIL
+
+
+# 11) carousel request
+class CarouselCreateReq(APIReq):
+    resource = CONST.RESOURCE_CAROUSEL
+    action = CONST.ACTION_CAROUSEL_CREATE
+    required_params = ['object_type', 'object_id', 'name', 'poster']
+
+
+class CarouselDeleteReq(APIReq):
+    resource = CONST.RESOURCE_CAROUSEL
+    action = CONST.ACTION_CAROUSEL_DELETE
+
+
+class CarouselListReq(APIReq):
+    resource = CONST.RESOURCE_CAROUSEL
+    action = CONST.ACTION_CAROUSEL_LIST
+

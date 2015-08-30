@@ -18,12 +18,6 @@ USER_TYPE_ADMIN = 'admin'
 USER_TYPE_DONATOR = 'donator'
 USER_TYPE_GOVERNMENT = 'government'
 
-
-# 4)State
-STATE_NOT_APPROVE = unicode(u'未审批')
-STATE_APPROVEED = unicode(u'审批通过')
-
-
 # 5) admin TYPES
 ADMIN_TYPE_NORMAL = unicode(u'普通管理员')
 ADMIN_TYPE_DONATOR = unicode(u'捐赠者')
@@ -31,9 +25,4 @@ ADMIN_TYPE_GOVERNMENT = unicode(u'政府工作人员')
 
 # 6) NOT In
 NOT_IN = 'NOT_IN'
-
-# 8) review status
-REVIEW_STATUS_PENDING = 'pending'
-REVIEW_STATUS_APPROVED = 'approved'
-REVIEW_STATUS_REJECTED = 'rejected'
 

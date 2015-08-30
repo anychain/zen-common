@@ -29,18 +29,11 @@ ADMIN_TYPE_NORMAL = unicode(u'普通管理员')
 ADMIN_TYPE_DONATOR = unicode(u'捐赠者')
 ADMIN_TYPE_GOVERNMENT = unicode(u'政府工作人员')
 
-
 # 6) NOT In
 NOT_IN = 'NOT_IN'
 
+# 8) review status
+REVIEW_STATUS_PENDING = 'pending'
+REVIEW_STATUS_APPROVED = 'approved'
+REVIEW_STATUS_REJECTED = 'rejected'
 
-# 7) news status
-NEWS_STATUS_PENDING = 'pending'
-NEWS_STATUS_APPROVED = 'approved'
-NEWS_STATUS_REJECTED = 'rejected'
-
-
-# 8) activity status
-ACTIVITY_STATUS_PENDING = 'pending'
-ACTIVITY_STATUS_APPROVED = 'approved'
-ACTIVITY_STATUS_REJECTED = 'rejected'

@@ -69,55 +69,55 @@ class APIReq():
         return json.dumps(self.req)
 
 
-# 1) user request
-class UserCreateReq(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_CREATE
+# 1) family request
+class FamilyCreateReq(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_CREATE
     required_params = ['passwd', 'phone']
 
 
-class UserUpdateReq(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_UPDATE
+class FamilyUpdateReq(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_UPDATE
     required_params = ['id']
 
 
-class UserDeleteReq(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_DELETE
+class FamilyDeleteReq(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_DELETE
 
 
-class UserListReq(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_LIST
+class FamilyListReq(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_LIST
 
 
-class UserDetailReq(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_DETAIL
+class FamilyDetailReq(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_DETAIL
     required_params = ['id']
 
 
-class UserResetPasswdReq(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_RESET_PASSWD
+class FamilyResetPasswdReq(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_RESET_PASSWD
 
 
-class UserChildList(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_CHILD_LIST
+class FamilyChildList(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_CHILD_LIST
 
 
-class UserAttendActivityList(APIReq):
-    resource = CONST.RESOURCE_USER
-    action = CONST.ACTION_USER_ATTEND_ACTIVITY_LIST
+class FamilyAttendActivityList(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_ATTEND_ACTIVITY_LIST
 
 
 # 2) session request
 class SessionCreateReq(APIReq):
     resource = CONST.RESOURCE_SESSION
     action = CONST.ACTION_SESSION_CREATE
-    required_params = ['user_id', 'password']
+    required_params = ['family_id', 'password']
 
 
 class SessionDeleteReq(APIReq):
@@ -184,33 +184,6 @@ class ChildDeleteReq(APIReq):
 class ChildDetailReq(APIReq):
     resource = CONST.RESOURCE_CHILD
     action = CONST.ACTION_CHILD_DETAIL
-
-
-# 5) family request
-class FamilyListReq(APIReq):
-    resource = CONST.RESOURCE_FAMILY
-    action = CONST.ACTION_FAMILY_LIST
-
-
-class FamilyCreateReq(APIReq):
-    resource = CONST.RESOURCE_FAMILY
-    action = CONST.ACTION_FAMILY_CREATE
-    required_params = ['family_id']
-
-
-class FamilyUpdateReq(APIReq):
-    resource = CONST.RESOURCE_FAMILY
-    action = CONST.ACTION_FAMILY_UPDATE
-
-
-class FamilyDeleteReq(APIReq):
-    resource = CONST.RESOURCE_FAMILY
-    action = CONST.ACTION_FAMILY_DELETE
-
-
-class FamilyDetailReq(APIReq):
-    resource = CONST.RESOURCE_FAMILY
-    action = CONST.ACTION_FAMILY_DETAIL
 
 
 # 6) branch request

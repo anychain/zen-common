@@ -361,6 +361,21 @@ def regex_query_filter(model, query, filters):
     return query
 
 
+def read_deleted_filter(db_model, query, deleted_filters):
+    deleted = deleted_filters['deleted']
+    if 'deleted' not in db_model.__table__.columns:
+        raise ValueError(("There is no `deleted` column in `%s` table. "
+                          "Project doesn't use soft-deleted feature.")
+                         % db_model.__name__)
+
+    default_deleted_value = db_model.__table__.c.deleted.default.arg
+    if deleted:
+        query = query.filter(db_model.deleted != default_deleted_value)
+    else:
+        query = query.filter(db_model.deleted == default_deleted_value)
+    return query
+
+
 def process_sort_params(sort_keys, sort_dirs,
                         default_keys=['created_at', 'id'],
                         default_dir='asc'):

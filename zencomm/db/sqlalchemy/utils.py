@@ -277,8 +277,6 @@ def model_query(model, session, args=None, **kwargs):
     query = session.query(model) if not args else session.query(*args)
     if 'deleted' in kwargs:
         query = _read_deleted_filter(query, model, kwargs['deleted'])
-    if 'project_id' in kwargs:
-        query = _project_filter(query, model, kwargs['project_id'])
 
     return query
 

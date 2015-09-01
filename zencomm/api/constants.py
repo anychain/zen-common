@@ -132,3 +132,13 @@ ACTION_CAROUSEL_LIST = 'ACTION_CAROUSEL_LIST'
 REVIEW_STATUS_PENDING = 'pending'
 REVIEW_STATUS_APPROVED = 'approved'
 REVIEW_STATUS_REJECTED = 'rejected'
+
+# 15) request type
+APIREQ_SESSION = 'session'
+APIREQ_ZENWEB = 'zenweb'
+
+# 15) Language constants
+LANG_SUPPORTED=['en', 'zh_cn']
+LANG_DFT = 'zh_cn'
+LANG_EN = 'en'
+LANG_ZH_CN = 'zh_cn'

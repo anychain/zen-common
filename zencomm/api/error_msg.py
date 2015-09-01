@@ -11,8 +11,10 @@
 
 
 '''
-    This files records allthe error code for api
+    This files records all the error code for api
 '''
+from zencomm.api.constants import LANG_EN
+from zencomm.api.constants import LANG_ZH_CN
 
 
 INVALID_PARAMETERS_PROVIDED = 'INVALID_PARAMETERS_PROVIDED'
@@ -29,4 +31,6 @@ CHILD_DELETE_FAILURE = 'CHILD_CREATION_FAILURE'
 FAMILY_CREATION_FAILURE = 'CHILD_CREATION_FAILURE'
 FAMILY_DELETE_FAILURE = 'CHILD_CREATION_FAILURE'
 
-UNKNOWN_SERVER_FAILUER = 'UNKNOWN_SERVER_FAILUER'
+
+ERRMSG_UNKNOWN_SERVER_FAILUER = { LANG_EN: "unknow server failure",
+                                   LANG_ZH_CN: u"未知错误"}

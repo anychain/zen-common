@@ -10,7 +10,6 @@
 #
 
 
-import sys
 import zencomm.api.error_code as ErrCode
 from zencomm.exception import ZenException
 

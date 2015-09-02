@@ -24,5 +24,7 @@ ERRMSG_INVALID_REQUEST_METHOD = {LANG_EN: "invalid request method",
                                  LANG_ZH_CN: u"请求方法错误"}
 ERRMSG_POST_ACTION_NOT_ALLOWED = {LANG_EN: "post action not allowed",
                                   LANG_ZH_CN: u"不支持post方法"}
-ERRMSG_INVALID_REQUEST_PARAMS = {LANG_EN: "invalid api request parameters",
-                                 LANG_ZH_CN: u"api请求参数不正确"}
+ERRMSG_INVALID_REQUEST_FORMAT = {LANG_EN: "invalid api request format",
+                                 LANG_ZH_CN: u"请求格式不正确"}
+ERRMSG_MISSED_REQUEST_PARAM = {LANG_EN: "missed parameter: %s in request",
+                               LANG_ZH_CN: u"请求缺失参数: %s"}

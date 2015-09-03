@@ -28,3 +28,5 @@ ERRMSG_INVALID_REQUEST_FORMAT = {LANG_EN: "invalid api request format",
                                  LANG_ZH_CN: u"请求格式不正确"}
 ERRMSG_MISSED_REQUEST_PARAM = {LANG_EN: "missed parameter: %s in request",
                                LANG_ZH_CN: u"请求缺失参数: %s"}
+ERRMSG_USER_SESSION_EXPIRED = {LANG_EN: "user session has expired, please login again",
+                               LANG_ZH_CN: u"用户会话过期, 请重新登陆"}

@@ -1,5 +1,5 @@
 .project
-*org.eclipse.ltk.core.refactoring.prefs
+.settings/org.eclipse.core.resources.prefs
 *.DS_Store
 .pydevproject
 *.pyc

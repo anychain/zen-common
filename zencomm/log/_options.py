@@ -6,13 +6,13 @@ _DEFAULT_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 log_opts = [
     cfg.BoolOpt('debug',
-                default=False,
+                default=True,
                 help='debug'),
     cfg.BoolOpt('verbose',
                 default=True,
                 help='info'),
-    cfg.StrOpt('log_file',
-               default='/var/log/zen.log',
+    cfg.StrOpt('log_dir',
+               default='/var/log/zen/',
                help='(Optional) Name of log file to output to. '
                     'If no default is set, logging will go to stdout.'),
     cfg.StrOpt('log_date_format',

@@ -1,3 +1,28 @@
+understanding of config module
+------------------------------
+* each option must be registered before it can be used
+* relation ship between Opt and configuration files? 
+
+   + namespace
+
+      if there are configuration files available, configuration files will be
+      read and loaded into MultiOpt as sections and normalized. Then namespace
+      will be created and it will use MultiOpt to get sections or normalized
+
+   + Opt
+
+      After options are registered, program will use the register options to get
+      option value, there is a map between opt and namespace, like when when access
+      CONF.api.server_addr, finally it will be mapped to following config in
+      configuration file:
+         [api]
+         server_addr = '192.168.22.1'
+
+      If ther is no such config in configuration file, default value(set when
+      registering options) will be used, else OptGroup.Opt will be mapped to 
+      Section.Key in Namespace
+      
+
 zencomm.conf.cfg
 ----------------
 

@@ -72,8 +72,6 @@ class Opt(object):
     :param dest: the name of the corresponding ConfigOpts property
     :param short: a single character CLI option name
     :param default: the default value of the option
-    :param positional: True if the option is a positional CLI argument
-    :param metavar: the option argument to show in --help
     :param help: an explanation of how the option is used
     :param secret: true if the value should be obfuscated in log output
     :param required: true if a value must be supplied for this option
@@ -103,14 +101,6 @@ class Opt(object):
 
         the default value of the option
 
-    .. py:attribute:: positional
-
-        True if the option is a positional CLI argument
-
-    .. py:attribute:: metavar
-
-        the name shown as the argument to a CLI option in --help output
-
     .. py:attribute:: help
 
         a string explaining how the option's value is used
@@ -119,7 +109,7 @@ class Opt(object):
     multi = False
 
     def __init__(self, name, type=None, dest=None, short=None,
-                 default=None, positional=False, metavar=None, help=None,
+                 default=None, help=None,
                  secret=False, required=False):
         if name.startswith('_'):
             raise ValueError('illegal name %s with prefix _' % (name,))
@@ -138,7 +128,6 @@ class Opt(object):
             self.dest = dest
         self.short = short
         self.default = default
-        self.metavar = metavar
         self.help = help
         self.secret = secret
         self.required = required
@@ -377,6 +366,17 @@ class OptGroup(object):
         if opt.dest in self._opts:
             del self._opts[opt.dest]
 
+    def _get_argparse_group(self, parser):
+        if self._argparse_group is None:
+            """Build an argparse._ArgumentGroup for this group."""
+            self._argparse_group = parser.add_argument_group(self.title,
+                                                             self.help)
+        return self._argparse_group
+
+    def _clear(self):
+        """Clear this group's option parsing state."""
+        self._argparse_group = None
+
 
 class ConfigParser(iniparser.BaseParser):
     def __init__(self, filename, sections):
@@ -609,7 +609,7 @@ class ConfigOpts(collections.Mapping):
         return __inner
 
     def __call__(self,
-                 default_config_files=['/tmp/zen.conf'],
+                 default_config_files=['/opt/zen/zen.conf'],
                  validate_default_values=False):
         """Parse config files.
 
@@ -796,7 +796,7 @@ class ConfigOpts(collections.Mapping):
             for info in group._opts.values():
                 yield info, group
 
-    def _unset_defaults_and_overrides(self):
+    def _unset_defaults(self):
         """Unset any default or override on all options."""
         for info, group in self._all_opt_infos():
             info.pop('default', None)

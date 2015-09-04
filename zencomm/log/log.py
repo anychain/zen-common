@@ -33,13 +33,25 @@ import six
 
 _PY26 = sys.version_info[0:2] == (2, 6)
 
+import os
+import errno
 from zencomm.log import _options
 from zencomm.log.formatters import CEWLogFilter
 from zencomm.log import handlers
 
 
-def _get_log_file_path(conf, binary=None):
-    logfile = conf.log_file
+def safe_mkdirs(path):
+    try:
+        os.makedirs(path)
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            raise
+
+def _get_log_file_path(conf, project, binary=None):
+    logdir = conf.log_dir
+    safe_mkdirs(logdir)
+
+    logfile = os.path.join(logdir, '%s.log' % project)
     ret = logfile if logfile else None
     return ret
 
@@ -125,10 +137,10 @@ def _create_logging_excepthook(product_name):
     return logging_excepthook
 
 
-def setup(conf, product_name, version='unknown'):
+def setup(conf, project, version='unknown'):
     """Setup logging for the current application."""
-    _setup_logging_from_conf(conf, product_name, version)
-    sys.excepthook = _create_logging_excepthook(product_name)
+    _setup_logging_from_conf(conf, project, version)
+    sys.excepthook = _create_logging_excepthook(project)
 
 
 def _find_facility(facility):
@@ -162,7 +174,7 @@ def _setup_logging_from_conf(conf, project, version):
     for handler in log_root.handlers:
         log_root.removeHandler(handler)
 
-    logpath = _get_log_file_path(conf)
+    logpath = _get_log_file_path(conf, project)
 
     # setup file handler for all levels
     filelog = logging.handlers.RotatingFileHandler(logpath,

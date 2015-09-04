@@ -14,7 +14,7 @@
 
 This module adds to logging functionality by adding the option to specify
 a context object when calling the various log methods.  If the context object
-is not specified, default formatting is used. 
+is not specified, default formatting is used.
 
 It also allows setting of formatting information through conf.
 """
@@ -36,6 +36,7 @@ _PY26 = sys.version_info[0:2] == (2, 6)
 from zencomm.log import _options
 from zencomm.log.formatters import CEWLogFilter
 from zencomm.log import handlers
+
 
 def _get_log_file_path(conf, binary=None):
     logfile = conf.log_file
@@ -164,11 +165,17 @@ def _setup_logging_from_conf(conf, project, version):
     logpath = _get_log_file_path(conf)
 
     # setup file handler for all levels
-    filelog = logging.handlers.RotatingFileHandler(logpath, mode='a', maxBytes=100000000, backupCount=5)
+    filelog = logging.handlers.RotatingFileHandler(logpath,
+                                                   mode='a',
+                                                   maxBytes=100000000,
+                                                   backupCount=5)
     log_root.addHandler(filelog)
 
     # setup file handler for critical, error and warning
-    errlog = logging.handlers.RotatingFileHandler(logpath+'.cew', mode='a', maxBytes=100000000, backupCount=5)
+    errlog = logging.handlers.RotatingFileHandler(logpath+'.cew',
+                                                  mode='a',
+                                                  maxBytes=100000000,
+                                                  backupCount=5)
     log_root.addHandler(errlog)
     log_root.addFilter(CEWLogFilter)
 
@@ -192,7 +199,7 @@ def _setup_logging_from_conf(conf, project, version):
     for handler in log_root.handlers:
         handler.setFormatter(logging.Formatter(fmt=conf.log_format,
                                                datefmt=datefmt))
- 
+
     if conf.debug:
         log_root.setLevel(logging.DEBUG)
     elif conf.verbose:

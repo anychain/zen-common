@@ -20,7 +20,7 @@ except ImportError:
 
 try:
     NullHandler = logging.NullHandler
-except AttributeError:  #NullHandler added in Python 2.7
+except AttributeError:  # NullHandler added in Python 2.7
     class NullHandler(logging.Handler):
         def handle(self, record):
             pass

@@ -13,9 +13,10 @@
 from rest_framework.response import Response
 from rest_framework import status
 import json
-from zencomm.log import logger
+from zencomm.log import log as logging
 from zencomm.api import exception
 
+LOG = logging.getLogger(__name__)
 
 HTTP_SUCCESS_STATUS = {
     'POST': status.HTTP_201_CREATED,
@@ -48,8 +49,8 @@ def parse_api_repy(reply_json):
     except Exception as e:
         errmsg = ("api reply<type:%s>: <%s> is not in json format"
                   % (type(reply_json), reply_json))
-        logger.error(errmsg)
-        logger.exception(e)
+        LOG.error(errmsg)
+        LOG.exception(e)
         raise exception.InternalServerFailuer(reason=errmsg)
     return reply
 

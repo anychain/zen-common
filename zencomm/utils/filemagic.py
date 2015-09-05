@@ -9,7 +9,9 @@ get file metadata
 '''
 
 import magic
-from zencomm.log import logger
+from zencomm.log import log as logging
+
+LOG = logging.getLogger(__name__)
 
 
 def get_file_type(filename):
@@ -20,8 +22,8 @@ def get_file_type(filename):
     try:
         ftype = magic.from_file(filename, mime=True)
     except Exception as e:
-        logger.error("failed to file type for file %s with error: %s"
-                     % (filename, e))
+        LOG.error("failed to file type for file %s with error: %s"
+                  % (filename, e))
     return ftype
 
 

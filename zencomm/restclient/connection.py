@@ -5,9 +5,10 @@ import threading
 import httplib
 import traceback
 import json
-from zencomm.log import logger
+from zencomm.log import log as logging
 from zencomm.api.comm import parse_api_repy
 
+LOG = logging.getLogger(__name__)
 
 class ConnectionQueue(object):
     ''' http connection queue '''
@@ -223,7 +224,7 @@ class RestClient(object):
                 if response.status in [200, 201, 204]:
                     self._set_conn(conn)
                     apiret = parse_api_repy(response.read())
-                    logger.info('restclient got response from api server: <%s>'
+                    LOG.info('restclient got response from api server: <%s>'
                                 % apiret)
                     return apiret
                 else:
@@ -233,27 +234,27 @@ class RestClient(object):
                     if 'retbody' in rest_reply:
                         return rest_reply
                     # log error and retry
-                    logger.error("Request failed with status: %d, error: %s "
+                    LOG.error("Request failed with status: %d, error: %s "
                                  % (response.status, rest_reply))
                     conn = self._get_conn()
             except Exception, e:
                 # only retry for timeout error
                 # print tracebacks.format_exc()
                 if isinstance(e, socket.timeout):
-                    logger.error("timeout for request")
-                    logger.exception(e)
+                    LOG.error("timeout for request")
+                    LOG.exception(e)
                     return None
-                logger.error("restclient request failed with exception %s" % e)
-                logger.exception(e)
+                LOG.error("restclient request failed with exception %s" % e)
+                LOG.exception(e)
                 conn = self._get_conn()
             retry_cnt += 1
             # do not sleep for the first 2 retries
             if retry_cnt <= 2:
                 continue
             time.sleep(next_sleep)
-            logger.warn("retry request for [%d] time after sleep [%.2f] secs"
+            LOG.warn("retry request for [%d] time after sleep [%.2f] secs"
                         % (retry_cnt, next_sleep))
 
-        logger.error("send request failed after retry for [%d] times"
+        LOG.error("send request failed after retry for [%d] times"
                      % (retry_cnt))
         return None

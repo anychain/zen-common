@@ -1,7 +1,8 @@
-from zencomm.log import logger
+from zencomm.log import log as logging
 from PIL import Image
 import StringIO
 
+LOG = logging.getLogger(__name__)
 THUMBNAIL_SIZE = (128, 128)
 
 
@@ -25,8 +26,8 @@ def create_thumbnail(file_content, file_type, file_size=THUMBNAIL_SIZE):
         thmnail = output_buf.getvalue()
         return thmnail
     except Exception, e:
-        logger.warn('failed to create thumnail with exception : [%s]' % e)
-        logger.exception(e)
+        LOG.warn('failed to create thumnail with exception : [%s]' % e)
+        LOG.exception(e)
         return None
     finally:
         if im:

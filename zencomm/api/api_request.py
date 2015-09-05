@@ -405,3 +405,31 @@ class CarouselDeleteReq(APIReq):
 class CarouselListReq(APIReq):
     resource = CONST.RESOURCE_CAROUSEL
     action = CONST.ACTION_CAROUSEL_LIST
+
+
+# 3) activity request
+class BugCreateReq(APIReq):
+    resource = CONST.RESOURCE_BUG
+    action = CONST.ACTION_BUG_CREATE
+    required_params = ['title', 'type', 'target', 'operation',
+                       'description']
+
+
+class BugUpdateReq(APIReq):
+    resource = CONST.RESOURCE_BUG
+    action = CONST.ACTION_BUG_UPDATE
+
+
+class BugDeleteReq(APIReq):
+    resource = CONST.RESOURCE_BUG
+    action = CONST.ACTION_BUG_DELETE
+
+
+class BugListReq(APIReq):
+    resource = CONST.RESOURCE_BUG
+    action = CONST.ACTION_BUG_LIST
+
+
+class BugDetailReq(APIReq):
+    resource = CONST.RESOURCE_BUG
+    action = CONST.ACTION_BUG_DETAIL

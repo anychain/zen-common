@@ -609,7 +609,7 @@ class ConfigOpts(collections.Mapping):
         return __inner
 
     def __call__(self,
-                 default_config_files=['/opt/zen/zen.conf'],
+                 default_config_files=['/opt/zen/conf/zen.conf'],
                  validate_default_values=False):
         """Parse config files.
 

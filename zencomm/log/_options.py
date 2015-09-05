@@ -12,7 +12,7 @@ log_opts = [
                 default=True,
                 help='info'),
     cfg.StrOpt('log_dir',
-               default='/var/log/zen/',
+               default='/opt/zen/logs/',
                help='(Optional) Name of log file to output to. '
                     'If no default is set, logging will go to stdout.'),
     cfg.StrOpt('log_date_format',
@@ -21,7 +21,8 @@ log_opts = [
                     'Default: %(default)s .'),
     cfg.StrOpt('log_format',
                default='%(asctime)s.%(msecs)03d %(thread)d %(levelname)s '
-                       '%(name)s [-] %(message)s [-] %(module)s:%(lineno)d',
+                       '%(name)s [-] %(message)s [-] '
+                       '%(module)s %(funcName)s:%(lineno)d',
                help='log format'),
     cfg.StrOpt('logging_debug_format',
                default='%(funcName)s %(pathname)s:%(lineno)d',

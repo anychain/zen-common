@@ -246,7 +246,6 @@ class RestClient(object):
                     LOG.exception(e)
                     return None
                 LOG.error("restclient request failed with exception %s" % e)
-                LOG.exception(e)
                 conn = self._get_conn()
             retry_cnt += 1
             # do not sleep for the first 2 retries

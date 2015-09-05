@@ -111,8 +111,8 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         # elif hasattr(value, '__iter__'):
         #     return list(map(recursive, value))
         # elif convert_instances and hasattr(value, '__dict__'):
-             # Likely an instance of something. Watch for cycles.
-             # Ignore class member vars.
+        # Likely an instance of something. Watch for cycles.
+        # Ignore class member vars.
         #     return recursive(value.__dict__, level=level + 1)
     except TypeError:
         # Class objects are tricky since they may define something like

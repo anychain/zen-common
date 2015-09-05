@@ -414,6 +414,7 @@ class BugCreateReq(APIReq):
     required_params = ['title', 'type', 'target', 'operation',
                        'description']
 
+
 class BugUpdateReq(APIReq):
     resource = CONST.RESOURCE_BUG
     action = CONST.ACTION_BUG_UPDATE

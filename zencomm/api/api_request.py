@@ -109,6 +109,11 @@ class FamilyChildList(APIReq):
     action = CONST.ACTION_FAMILY_CHILD_LIST
 
 
+class FamilyMemberList(APIReq):
+    resource = CONST.RESOURCE_FAMILY
+    action = CONST.ACTION_FAMILY_MEMBER_LIST
+
+
 class FamilyAttendActivityList(APIReq):
     resource = CONST.RESOURCE_FAMILY
     action = CONST.ACTION_FAMILY_ATTEND_ACTIVITY_LIST
@@ -180,11 +185,40 @@ class ChildUpdateReq(APIReq):
 class ChildDeleteReq(APIReq):
     resource = CONST.RESOURCE_CHILD
     action = CONST.ACTION_CHILD_DELETE
+    required_params = ['id']
 
 
 class ChildDetailReq(APIReq):
     resource = CONST.RESOURCE_CHILD
     action = CONST.ACTION_CHILD_DETAIL
+
+
+# 5) member request
+class MemberListReq(APIReq):
+    resource = CONST.RESOURCE_MEMBER
+    action = CONST.ACTION_MEMBER_LIST
+
+
+class MemberCreateReq(APIReq):
+    resource = CONST.RESOURCE_MEMBER
+    action = CONST.ACTION_MEMBER_CREATE
+    required_params = ['name', 'birthday']
+
+
+class MemberUpdateReq(APIReq):
+    resource = CONST.RESOURCE_MEMBER
+    action = CONST.ACTION_MEMBER_UPDATE
+
+
+class MemberDeleteReq(APIReq):
+    resource = CONST.RESOURCE_MEMBER
+    action = CONST.ACTION_MEMBER_DELETE
+    required_params = ['id']
+
+
+class MemberDetailReq(APIReq):
+    resource = CONST.RESOURCE_MEMBER
+    action = CONST.ACTION_MEMBER_DETAIL
 
 
 # 6) branch request

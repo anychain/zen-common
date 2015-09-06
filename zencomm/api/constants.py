@@ -20,7 +20,7 @@
 RESOURCE_SESSION = 'session'
 RESOURCE_ACTIVITY = 'activity'
 RESOURCE_CHILD = 'child'
-RESOURCE_MEMBER = 'child'
+RESOURCE_MEMBER = 'member'
 RESOURCE_FAMILY = 'family'
 RESOURCE_DATADICT = 'datadict'
 RESOURCE_BRANCH = 'branch'

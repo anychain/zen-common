@@ -73,3 +73,8 @@ class InvalidSortKey(ZenException):
 class InternalServerFailuer(ZenException):
     msg_fmt = "Internal service failure: %(reason)s"
     error_code = ErrCode.UNKNOWN_SERVER_FAILUER
+
+
+class MemberAlreadyExist(ZenException):
+    msg_fmt = "Member already exist: %(reason)s"
+    error_code = ErrCode.USER_ALREADY_REGISTERED

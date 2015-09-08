@@ -467,3 +467,112 @@ class BugListReq(APIReq):
 class BugDetailReq(APIReq):
     resource = CONST.RESOURCE_BUG
     action = CONST.ACTION_BUG_DETAIL
+
+
+# 3) amy request
+class AmyCreateReq(APIReq):
+    resource = CONST.RESOURCE_AMY
+    action = CONST.ACTION_AMY_CREATE
+    required_params = ['title', 'type', 'target', 'operation',
+                       'description']
+
+
+class AmyUpdateReq(APIReq):
+    resource = CONST.RESOURCE_AMY
+    action = CONST.ACTION_AMY_UPDATE
+
+
+class AmyDeleteReq(APIReq):
+    resource = CONST.RESOURCE_AMY
+    action = CONST.ACTION_AMY_DELETE
+
+
+class AmyListReq(APIReq):
+    resource = CONST.RESOURCE_AMY
+    action = CONST.ACTION_AMY_LIST
+
+
+class AmyDetailReq(APIReq):
+    resource = CONST.RESOURCE_CATEGORY
+    action = CONST.ACTION_AMY_DETAIL
+
+
+# 3) category request
+class CategoryCreateReq(APIReq):
+    resource = CONST.RESOURCE_CATEGORY
+    action = CONST.ACTION_CATEGORY_CREATE
+    required_params = ['name', 'status']
+
+
+class CategoryUpdateReq(APIReq):
+    resource = CONST.RESOURCE_CATEGORY
+    action = CONST.ACTION_CATEGORY_UPDATE
+
+
+class CategoryDeleteReq(APIReq):
+    resource = CONST.RESOURCE_CATEGORY
+    action = CONST.ACTION_CATEGORY_DELETE
+
+
+class CategoryListReq(APIReq):
+    resource = CONST.RESOURCE_CATEGORY
+    action = CONST.ACTION_CATEGORY_LIST
+
+
+class CategoryDetailReq(APIReq):
+    resource = CONST.RESOURCE_CATEGORY
+    action = CONST.ACTION_CATEGORY_DETAIL
+
+
+# 3) product request
+class ProductCreateReq(APIReq):
+    resource = CONST.RESOURCE_PRODUCT
+    action = CONST.ACTION_PRODUCT_CREATE
+    required_params = ['name', 'status']
+
+
+class ProductUpdateReq(APIReq):
+    resource = CONST.RESOURCE_PRODUCT
+    action = CONST.ACTION_PRODUCT_UPDATE
+
+
+class ProductDeleteReq(APIReq):
+    resource = CONST.RESOURCE_PRODUCT
+    action = CONST.ACTION_PRODUCT_DELETE
+
+
+class ProductListReq(APIReq):
+    resource = CONST.RESOURCE_PRODUCT
+    action = CONST.ACTION_PRODUCT_LIST
+
+
+class ProductDetailReq(APIReq):
+    resource = CONST.RESOURCE_PRODUCT
+    action = CONST.ACTION_PRODUCT_DETAIL
+
+
+# 3) order request
+class OrderCreateReq(APIReq):
+    resource = CONST.RESOURCE_ORDER
+    action = CONST.ACTION_ORDER_CREATE
+    required_params = ['name', 'status']
+
+
+class OrderUpdateReq(APIReq):
+    resource = CONST.RESOURCE_ORDER
+    action = CONST.ACTION_ORDER_UPDATE
+
+
+class OrderDeleteReq(APIReq):
+    resource = CONST.RESOURCE_ORDER
+    action = CONST.ACTION_ORDER_DELETE
+
+
+class OrderListReq(APIReq):
+    resource = CONST.RESOURCE_ORDER
+    action = CONST.ACTION_ORDER_LIST
+
+
+class OrderDetailReq(APIReq):
+    resource = CONST.RESOURCE_ORDER
+    action = CONST.ACTION_ORDER_DETAIL

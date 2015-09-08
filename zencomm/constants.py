@@ -26,3 +26,6 @@ ADMIN_TYPE_GOVERNMENT = unicode(u'政府工作人员')
 # 6) NOT In
 NOT_IN = 'NOT_IN'
 
+# 7) category status
+CATEGORY_STATUS_VISIBLE = 'visible'
+CATEGORY_STATUS_HIDDEN = 'hidden'

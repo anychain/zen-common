@@ -31,3 +31,5 @@ ERRMSG_MISSED_REQUEST_PARAM = {LANG_EN: "missed parameter: %s in request",
 ERRMSG_USER_SESSION_EXPIRED = {LANG_EN: "user session has expired, "
                                         "please login again",
                                LANG_ZH_CN: u"用户会话过期, 请重新登陆"}
+ERRMSG_INVALID_REQUEST_URL = {LANG_EN: "invalid api request url",
+                              LANG_ZH_CN: u"api 请求url不正确"}

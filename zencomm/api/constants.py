@@ -153,10 +153,10 @@ ACTION_NEWS_DETAIL = 'ACTION_NEWS_DETAIL'
 
 
 # 13) CAROUSEL ACTION
-ACTION_CAROUSEL_CREATE = 'create_carousel'
-ACTION_CAROUSEL_DELETE = 'delete_carousel'
-ACTION_CAROUSEL_LIST = 'get_carousel_list'
-ACTION_CAROUSEL_DETAIL = 'describe_carousel'
+ACTION_CAROUSEL_CREATE = 'carousel_creaet'
+ACTION_CAROUSEL_DELETE = 'carousel_delete'
+ACTION_CAROUSEL_LIST = 'carousel_list'
+ACTION_CAROUSEL_DETAIL = 'carousel_detail'
 
 # 14) review status
 REVIEW_STATUS_PENDING = 'pending'

@@ -31,6 +31,7 @@ class Query(sqlalchemy.orm.query.Query):
                             # commented by frank han, since id is Integer type,
                             # while id is uuid, which is string
                             # this does not work on on postgres
+                            # keep record here
                             'updated_at': literal_column('updated_at'),
                             'deleted_at': timeutils.utcnow()},
                            synchronize_session=synchronize_session)

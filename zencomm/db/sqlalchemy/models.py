@@ -131,6 +131,7 @@ class SoftDeleteMixin(object):
         # commented by frank han, since id is Integer type,
         # while id is uuid, which is string
         # this does not work on on postgres
+        # keep record here
         self.deleted = 1
         self.deleted_at = timeutils.utcnow()
         self.save(session=session)

@@ -333,7 +333,7 @@ APIREQ_ATTRIBUTE = {
     ACTION_ADDRCODE_DETAIL: {'type': APIREQ_SESSION,
                              'required_params': []},
     ACTION_ADMIN_CREATE: {'type': APIREQ_SESSION,
-                          'required_params': []},
+                          'required_params': ['phone', 'passwd']},
     ACTION_ADMIN_UPDATE: {'type': APIREQ_SESSION,
                           'required_params': []},
     ACTION_ADMIN_DELETE: {'type': APIREQ_SESSION,

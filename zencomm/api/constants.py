@@ -48,7 +48,8 @@ RESOURCE_SINGLAR_TABLE = {
     'children': RESOURCE_CHILD,
     'families': RESOURCE_FAMILY,
     'news': RESOURCE_NEWS,
-    'branches': RESOURCE_BRANCH
+    'branches': RESOURCE_BRANCH,
+    'categories': RESOURCE_CATEGORY,
 }
 
 # 1) FAMILY ACTION
@@ -251,7 +252,7 @@ APIREQ_ATTRIBUTE = {
                                                  'poster', 'content',
                                                  'begin_time', 'end_time']},
     ACTION_ACTIVITY_UPDATE: {'type': APIREQ_SESSION,
-                             'required_params': ['name', 'poster', 'summary']},
+                             'required_params': ['id']},
     ACTION_ACTIVITY_DELETE: {'type': APIREQ_SESSION,
                              'required_params': []},
     ACTION_ACTIVITY_LIST: {'type': APIREQ_SESSION,

@@ -126,6 +126,11 @@ class SoftDeleteMixin(object):
 
     def soft_delete(self, session):
         """Mark this object as deleted."""
-        self.deleted = self.id
+        # self.deleted = self.id
+        # 'deleted': literal_column('id'),
+        # commented by frank han, since id is Integer type,
+        # while id is uuid, which is string
+        # this does not work on on postgres
+        self.deleted = 1
         self.deleted_at = timeutils.utcnow()
         self.save(session=session)

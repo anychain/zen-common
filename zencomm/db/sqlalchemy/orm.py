@@ -26,7 +26,11 @@ from zencomm.db.sqlalchemy import update_match
 class Query(sqlalchemy.orm.query.Query):
     """Subclass of sqlalchemy.query with soft_delete() method."""
     def soft_delete(self, synchronize_session='evaluate'):
-        return self.update({'deleted': literal_column('id'),
+        return self.update({'deleted': 1,
+                            # 'deleted': literal_column('id'),
+                            # commented by frank han, since id is Integer type,
+                            # while id is uuid, which is string
+                            # this does not work on on postgres
                             'updated_at': literal_column('updated_at'),
                             'deleted_at': timeutils.utcnow()},
                            synchronize_session=synchronize_session)

@@ -1,4 +1,16 @@
+# -*- coding: utf-8 -*-
+
+#
+# Licensed Materials - Property of esse.io
+#
+# (C) Copyright esse.io. 2015 All Rights Reserved
+#
+# Author: frank (frank@esse.io)
+#
+#
+
 import sys
+from zencomm.api import error_code as ErrCodes
 
 
 class ZenException(Exception):
@@ -38,3 +50,8 @@ class ZenException(Exception):
                 '''
         self.message = message
         super(ZenException, self).__init__(message)
+
+
+class InternalServerFailure(ZenException):
+    msg_fmt = "Internal server failure: %(reason)s"
+    error_code = ErrCodes.UNKNOWN_SERVER_FAILUER

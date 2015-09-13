@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+
+#
+# Licensed Materials - Property of esse.io
+#
+# (C) Copyright esse.io. 2015 All Rights Reserved
+#
+# Author: Frank Han (frank@esse.io)
+#
+#
+
 # constants definition
 
 # 1) Data Dictionary Const

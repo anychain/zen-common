@@ -78,3 +78,8 @@ class InternalServerFailuer(ZenException):
 class MemberAlreadyExist(ZenException):
     msg_fmt = "Member already exist: %(reason)s"
     error_code = ErrCode.USER_ALREADY_REGISTERED
+
+
+class UnknowServerFailure(ZenException):
+    msg_fmt = "Internal server failure: %(reason)s"
+    error_code = ErrCode.UNKNOWN_SERVER_FAILUER

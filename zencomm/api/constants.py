@@ -262,7 +262,7 @@ APIREQ_ATTRIBUTE = {
     ACTION_ACTIVITY_LIST: {'type': APIREQ_SESSION,
                            'required_params': []},
     ACTION_ACTIVITY_DETAIL: {'type': APIREQ_SESSION,
-                           'required_params': []},
+                             'required_params': []},
     ACTION_ACTIVITY_JOIN: {'type': APIREQ_SESSION,
                            'required_params': ['id', 'family_id']},
     ACTION_CHILD_LIST: {'type': APIREQ_SESSION,

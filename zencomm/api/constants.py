@@ -62,7 +62,8 @@ ACTION_FAMILY_DETAIL = '%s_detail' % RESOURCE_FAMILY
 ACTION_FAMILY_RESET_PASSWD = '%s_resetpass' % RESOURCE_FAMILY
 ACTION_FAMILY_CHILD_LIST = '%s_%s_list' % (RESOURCE_FAMILY, RESOURCE_CHILD)
 ACTION_FAMILY_MEMBER_LIST = '%s_%s_list' % (RESOURCE_FAMILY, RESOURCE_MEMBER)
-ACTION_FAMILY_ACTIVITY_LIST = '%s_%s_list' % (RESOURCE_FAMILY, RESOURCE_ACTIVITY)
+ACTION_FAMILY_ACTIVITY_LIST = '%s_%s_list' % \
+                              (RESOURCE_FAMILY, RESOURCE_ACTIVITY)
 
 
 RESOURCE_FAMILY_STATUS_INACTIVE = 'INACTIVE'
@@ -80,7 +81,8 @@ ACTION_ACTIVITY_DELETE = '%s_delete' % RESOURCE_ACTIVITY
 ACTION_ACTIVITY_LIST = '%s_list' % RESOURCE_ACTIVITY
 ACTION_ACTIVITY_DETAIL = '%s_detail' % RESOURCE_ACTIVITY
 ACTION_ACTIVITY_JOIN = '%s_join' % (RESOURCE_ACTIVITY)
-ACTION_ACTIVITY_FAMILY_LIST = '%s_%s_list' % (RESOURCE_ACTIVITY, RESOURCE_FAMILY)
+ACTION_ACTIVITY_FAMILY_LIST = '%s_%s_list' % \
+                              (RESOURCE_ACTIVITY, RESOURCE_FAMILY)
 
 # 4) CHILD_ACTION
 ACTION_CHILD_LIST = 'child_list'
@@ -241,7 +243,7 @@ APIREQ_ATTRIBUTE = {
     ACTION_FAMILY_MEMBER_LIST: {'type': APIREQ_SESSION,
                                 'required_params': []},
     ACTION_FAMILY_ACTIVITY_LIST: {'type': APIREQ_SESSION,
-                                         'required_params': ['id']},
+                                  'required_params': ['id']},
     ACTION_SESSION_CREATE: {'type': APIREQ_SESSION,
                             'required_params': []},
     ACTION_SESSION_DELETE: {'type': APIREQ_SESSION,
@@ -260,9 +262,9 @@ APIREQ_ATTRIBUTE = {
     ACTION_ACTIVITY_LIST: {'type': APIREQ_SESSION,
                            'required_params': []},
     ACTION_ACTIVITY_DETAIL: {'type': APIREQ_SESSION,
-                             'required_params': []},
+                           'required_params': []},
     ACTION_ACTIVITY_JOIN: {'type': APIREQ_SESSION,
-                             'required_params': ['id', 'family_id']},                    
+                           'required_params': ['id', 'family_id']},
     ACTION_CHILD_LIST: {'type': APIREQ_SESSION,
                         'required_params': []},
     ACTION_CHILD_CREATE: {'type': APIREQ_SESSION,
@@ -424,4 +426,3 @@ APIREQ_ATTRIBUTE = {
     ACTION_ORDER_DETAIL: {'type': APIREQ_SESSION,
                           'required_params': []},
 }
-

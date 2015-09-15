@@ -33,3 +33,9 @@ ERRMSG_USER_SESSION_EXPIRED = {LANG_EN: "user session has expired, "
                                LANG_ZH_CN: u"用户会话过期, 请重新登陆"}
 ERRMSG_INVALID_REQUEST_URL = {LANG_EN: "invalid api request url",
                               LANG_ZH_CN: u"api 请求url不正确"}
+ERRMSG_USER_OR_PASSWD_INCORRECT = {LANG_EN: "incorrect user or password",
+                                   LANG_ZH_CN: u"用户名或者密码不对"}
+ERRMSG_SESSION_CREATE_FAILURE = {LANG_EN: "failed to create user session",
+                                 LANG_ZH_CN: u"创建用户会话失败"}
+ERRMSG_SESSION_DELETE_FAILURE = {LANG_EN: "failed to delete user session",
+                                 LANG_ZH_CN: u"删除用户会话失败"}

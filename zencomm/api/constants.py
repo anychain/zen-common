@@ -72,7 +72,7 @@ RESOURCE_FAMILY_STATUS_ACTIVE = 'ACTIVE'
 # 2) SESSION ACTION
 ACTION_SESSION_CREATE = 'session_create'
 ACTION_SESSION_DELETE = 'session_delete'
-ACTION_SESSION_RENEW = 'session_renew'
+ACTION_SESSION_DETAIL = 'session_detail'
 
 # 3) ACTIVITY ACTION
 ACTION_ACTIVITY_CREATE = '%s_create' % RESOURCE_ACTIVITY
@@ -245,11 +245,11 @@ APIREQ_ATTRIBUTE = {
     ACTION_FAMILY_ACTIVITY_LIST: {'type': APIREQ_SESSION,
                                   'required_params': ['id']},
     ACTION_SESSION_CREATE: {'type': APIREQ_SESSION,
-                            'required_params': []},
+                            'required_params': ['phone', 'passwd']},
     ACTION_SESSION_DELETE: {'type': APIREQ_SESSION,
-                            'required_params': []},
-    ACTION_SESSION_RENEW: {'type': APIREQ_SESSION,
-                           'required_params': []},
+                            'required_params': ['id']},
+    ACTION_SESSION_DETAIL: {'type': APIREQ_SESSION,
+                            'required_params': ['id']},
     ACTION_ACTIVITY_CREATE: {'type': APIREQ_SESSION,
                              'required_params': ['name', 'addrcode', 'address',
                                                  'size', 'type', 'subject',

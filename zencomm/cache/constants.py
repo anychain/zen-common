@@ -8,10 +8,15 @@
 #
 
 '''
-    constants that will be stored in redis as key
+    constants that will be stored in memcache as key
 '''
 
 # preoject name
 PROJECT_PREFIX = 'Zen'
 
-REDIS_SESSION_KEY_PREFIX = '%s.SessionKey' % PROJECT_PREFIX
+SESSION_KEY_PREFIX_MEMCACHE = '%s.SessionKey' % PROJECT_PREFIX
+
+
+MEMCACHE_KEY_TIMEOUT = {
+    SESSION_KEY_PREFIX_MEMCACHE: 10800, # 3 hours
+}

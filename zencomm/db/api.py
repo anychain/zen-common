@@ -377,7 +377,7 @@ def read_deleted_filter(db_model, query, deleted_filters):
 
 
 def process_sort_params(sort_keys, sort_dirs,
-                        default_keys=['created_at', 'id'],
+                        default_keys=['created_at'],
                         default_dir='asc'):
     """Process the sort parameters to include default keys.
 
@@ -443,4 +443,5 @@ def process_sort_params(sort_keys, sort_dirs,
             result_dirs.append(default_dir_value)
 
     return result_keys, result_dirs
+
 

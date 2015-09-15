@@ -81,8 +81,12 @@ ACTION_ACTIVITY_DELETE = '%s_delete' % RESOURCE_ACTIVITY
 ACTION_ACTIVITY_LIST = '%s_list' % RESOURCE_ACTIVITY
 ACTION_ACTIVITY_DETAIL = '%s_detail' % RESOURCE_ACTIVITY
 ACTION_ACTIVITY_JOIN = '%s_join' % (RESOURCE_ACTIVITY)
+ACTION_ACTIVITY_SIGN = '%s_sign' % (RESOURCE_ACTIVITY)
 ACTION_ACTIVITY_FAMILY_LIST = '%s_%s_list' % \
                               (RESOURCE_ACTIVITY, RESOURCE_FAMILY)
+ACTIVITY_FAMILY_JOINED = 'joined'
+ACTIVITY_FAMILY_ATTENDED = 'attended'
+ACTIVITY_FAMILY_CANCELED = 'canceled'
 
 # 4) CHILD_ACTION
 ACTION_CHILD_LIST = 'child_list'
@@ -243,7 +247,7 @@ APIREQ_ATTRIBUTE = {
     ACTION_FAMILY_MEMBER_LIST: {'type': APIREQ_SESSION,
                                 'required_params': []},
     ACTION_FAMILY_ACTIVITY_LIST: {'type': APIREQ_SESSION,
-                                  'required_params': ['id']},
+                                  'required_params': []},
     ACTION_SESSION_CREATE: {'type': APIREQ_SESSION,
                             'required_params': []},
     ACTION_SESSION_DELETE: {'type': APIREQ_SESSION,
@@ -265,6 +269,8 @@ APIREQ_ATTRIBUTE = {
                              'required_params': []},
     ACTION_ACTIVITY_JOIN: {'type': APIREQ_SESSION,
                            'required_params': ['id', 'family_id']},
+    ACTION_ACTIVITY_SIGN: {'type': APIREQ_SESSION,
+                           'required_params': ['family_id']},
     ACTION_CHILD_LIST: {'type': APIREQ_SESSION,
                         'required_params': []},
     ACTION_CHILD_CREATE: {'type': APIREQ_SESSION,

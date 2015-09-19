@@ -1,7 +1,7 @@
 # zen-common
 Zen Data Platform Common Libraries
 
-**Utilize the following OpenStack Oslo libraries:**
+**Utilizing the following OpenStack Oslo libraries:**
 - oslo_concurrency
 - oslo_context
 - oslo_i18n
